@@ -1,4 +1,4 @@
-package proyectoGimnaisa.model;
+package proyectoGimnasia.model;
 
 public class RepoCompeticiones {
 

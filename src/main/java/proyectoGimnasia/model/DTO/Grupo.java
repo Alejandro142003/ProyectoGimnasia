@@ -1,4 +1,4 @@
-package proyectoGimnaisa.model.DTO;
+package proyectoGimnasia.model.DTO;
 
 public class Grupo {
 
