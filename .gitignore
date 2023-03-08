@@ -1,0 +1,6 @@
+#Este archivo git ignora todas las carpetas excepto el src y el pom.
+.git
+.settings
+target
+.classpath
+.project
