@@ -7,7 +7,6 @@ public class Persona {
 	private int telefono;
 	
 	public Persona() {
-		super();
 		this.dni="";
 		this.nombre="";
 		this.correo="";
