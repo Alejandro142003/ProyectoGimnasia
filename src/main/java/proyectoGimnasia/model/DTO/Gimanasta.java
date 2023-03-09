@@ -6,6 +6,13 @@ public class Gimanasta extends Persona{
 	private String club;
 	private int dorsal;
 
+	public Gimanasta() {
+		super();
+		this.categoria = "";
+		this.club="";
+		this.dorsal=0;
+	}
+
 	public Gimanasta(String dni, String nombre, String correo, int telefono, String categoria, String club,
 			int dorsal) {
 		super(dni, nombre, correo, telefono);

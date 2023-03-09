@@ -6,6 +6,14 @@ public class Persona {
 	private String correo;
 	private int telefono;
 	
+	public Persona() {
+		super();
+		this.dni="";
+		this.nombre="";
+		this.correo="";
+		this.telefono=0;
+	}
+
 	public Persona(String dni, String nombre, String correo, int telefono) {
 		super();
 		this.dni = dni;
