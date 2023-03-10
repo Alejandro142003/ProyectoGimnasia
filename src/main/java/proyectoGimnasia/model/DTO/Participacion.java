@@ -8,16 +8,18 @@ public class Participacion<T> {
     private double puntuacion;
     private Integer dorsal;
     
-	public Participacion(T participantes, Time hora, double puntuacion) {
+	public Participacion(T participantes, Time hora, double puntuacion, Integer dorsal) {
         this.participantes = participantes;
         this.hora = hora;
         this.puntuacion = puntuacion;
+        this.dorsal = dorsal;
     }
     
     public Participacion() {
     	this.participantes = null;
     	this.hora = null;
     	this.puntuacion = 0.0;
+    	this.dorsal = null;
     }
     
     // Getters y setters para los atributos de la clase
