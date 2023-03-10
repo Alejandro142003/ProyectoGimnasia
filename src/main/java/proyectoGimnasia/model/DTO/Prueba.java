@@ -6,18 +6,20 @@ public class Prueba {
 	private String tipo;
 	private String categoria;
 	private String aparato;
-	ArrayList<Participacion> clase = new ArrayList<Participacion>(); //mirar por que cre que solo son los participantes
+	private ArrayList<String> participacion;
 	
 	public Prueba() {
 		this.tipo="";
 		this.categoria="";
 		this.aparato="";
+		this.participacion=null;
 	}
 	public Prueba(String tipo, String categoria, String aparato) {
 		super();
 		this.tipo = tipo;
 		this.categoria = categoria;
 		this.aparato = aparato;
+		this.participacion = participacion;
 	}
 	public String getTipo() {
 		return tipo;
@@ -37,11 +39,20 @@ public class Prueba {
 	public void setAparato(String aparato) {
 		this.aparato = aparato;
 	}
-	
+	public ArrayList<String> getParticipacion() {
+        return participacion;
+    }
+
+    public void setParticipacion(ArrayList<String> participacion) {
+        this.participacion = participacion;
+    }
 	@Override
 	public String toString() {
-		return "Prueba [tipo=" + tipo + ", categoria=" + categoria + ", aparato=" + aparato + "]";
+		return "Prueba [tipo=" + tipo + ", categoria=" + categoria + ", aparato=" + aparato + ", participacion="
+				+ participacion + "]";
 	}
+	
+	
 	
 	
 }
