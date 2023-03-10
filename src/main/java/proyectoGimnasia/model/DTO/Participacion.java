@@ -3,20 +3,20 @@ package proyectoGimnasia.model.DTO;
 import java.sql.Time;	//Preguntar en clase 
 
 public class Participacion<T> {
-    private T participantes;
+    private T tipo;
     private Time hora;
     private double puntuacion;
     private Integer dorsal;//Para indicar dorsal
     
-	public Participacion(T participantes, Time hora, double puntuacion, Integer dorsal) {
-        this.participantes = participantes;
+	public Participacion(T tipo, Time hora, double puntuacion, Integer dorsal) {
+        this.tipo = tipo;
         this.hora = hora;
         this.puntuacion = puntuacion;
         this.dorsal = dorsal;
     }
     
     public Participacion() {
-    	this.participantes = null;
+    	this.tipo = null;
     	this.hora = null;
     	this.puntuacion = 0.0;
     	this.dorsal = null;
@@ -24,11 +24,11 @@ public class Participacion<T> {
     
     // Getters y setters para los atributos de la clase
     public T getParticipantes() {
-        return participantes;
+        return tipo;
     }
     
-    public void setParticipantes(T participantes) {
-        this.participantes = participantes;
+    public void setParticipantes(T tipo) {
+        this.tipo = tipo;
     }
     
     public Time getHora() {
@@ -60,4 +60,11 @@ public class Participacion<T> {
 	public void setDorsal(Integer dorsal) {
 		this.dorsal = dorsal;
 	}
+
+	@Override
+	public String toString() {
+		return "Participacion [tipo=" + tipo + ", hora=" + hora + ", puntuacion=" + puntuacion + ", dorsal=" + dorsal
+				+ "]";
+	}
+	
 }
