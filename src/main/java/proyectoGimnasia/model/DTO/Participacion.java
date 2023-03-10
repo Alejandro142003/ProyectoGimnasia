@@ -6,8 +6,9 @@ public class Participacion<T> {
     private T participantes;
     private Time hora;
     private double puntuacion;
+    private Integer dorsal;
     
-    public Participacion(T participantes, Time hora, double puntuacion) {
+	public Participacion(T participantes, Time hora, double puntuacion) {
         this.participantes = participantes;
         this.hora = hora;
         this.puntuacion = puntuacion;
@@ -43,4 +44,18 @@ public class Participacion<T> {
     public void setPuntuacion(double puntuacion) {
         this.puntuacion = puntuacion;
     }
+    
+    /**
+	 * @return the dorsal
+	 */
+	public Integer getDorsal() {
+		return dorsal;
+	}
+
+	/**
+	 * @param dorsal the dorsal to set
+	 */
+	public void setDorsal(Integer dorsal) {
+		this.dorsal = dorsal;
+	}
 }
