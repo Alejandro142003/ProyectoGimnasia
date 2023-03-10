@@ -6,7 +6,7 @@ public class Participacion<T> {
     private T participantes;
     private Time hora;
     private double puntuacion;
-    private Integer dorsal;
+    private Integer dorsal;//Para indicar dorsal
     
 	public Participacion(T participantes, Time hora, double puntuacion, Integer dorsal) {
         this.participantes = participantes;
