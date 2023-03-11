@@ -1,10 +1,11 @@
 package proyectoGimnasia.interfaces;
 
 public interface iControllerPruba {
-	void executeEventMenu();
-	void controlEventMenu(int op);
-	void controllerAddEvent();
-	void controllerEditEvent();
-	void controllerShowEvent();
-	void controllerDeleteEvent();
+	void executePruebaMenu();
+	void controlPruebaMenu(int op);
+	void controllerAgregarPrueba();
+	void controllerEditarPrueba();
+	void controllerMostrarPrueba();
+	void controllerEliminarPrueba();
 }
+

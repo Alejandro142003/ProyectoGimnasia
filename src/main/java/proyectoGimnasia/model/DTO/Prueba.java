@@ -2,57 +2,64 @@ package proyectoGimnasia.model.DTO;
 
 import java.util.ArrayList;
 
+
 public class Prueba {
 	private String tipo;
-	private String categoria;
-	private String aparato;
-	private ArrayList<String> participacion;
+	private Categoria categoria;
+	private Aparato aparato;
+	private ArrayList<Participacion> participaciones;
+
 	
 	public Prueba() {
-		this.tipo="";
-		this.categoria="";
-		this.aparato="";
-		this.participacion=null;
+	    this.tipo = "";
+	    this.categoria = null;
+	    this.aparato = null;
+	    this.participaciones = new ArrayList<Participacion>();
 	}
-	public Prueba(String tipo, String categoria, String aparato) {
-		super();
-		this.tipo = tipo;
-		this.categoria = categoria;
-		this.aparato = aparato;
-		this.participacion = participacion;
+
+	public Prueba(String tipo, Categoria categoria, Aparato aparato) {
+	    super();
+	    this.tipo = tipo;
+	    this.categoria = categoria;
+	    this.aparato = aparato;
+	    this.participaciones = new ArrayList<Participacion>();
 	}
+
 	public String getTipo() {
 		return tipo;
 	}
+	
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public String getCategoria() {
+	
+	public Categoria getCategoria() {
 		return categoria;
 	}
-	public void setCategoria(String categoria) {
+	
+	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	public String getAparato() {
+	
+	public Aparato getAparato() {
 		return aparato;
 	}
-	public void setAparato(String aparato) {
+	
+	public void setAparato(Aparato aparato) {
 		this.aparato = aparato;
 	}
-	public ArrayList<String> getParticipacion() {
-        return participacion;
+	
+	public ArrayList<Participacion> getParticipaciones() {
+        return participaciones;
     }
 
-    public void setParticipacion(ArrayList<String> participacion) {
-        this.participacion = participacion;
+    public void setParticipaciones(ArrayList<Participacion> participaciones) {
+        this.participaciones = participaciones;
     }
+	
 	@Override
 	public String toString() {
-		return "Prueba [tipo=" + tipo + ", categoria=" + categoria + ", aparato=" + aparato + ", participacion="
-				+ participacion + "]";
+		return "Prueba [tipo=" + tipo + ", categoria=" + categoria + ", aparato=" + aparato + ", participaciones="
+				+ participaciones + "]";
 	}
-	
-	
-	
-	
 }
