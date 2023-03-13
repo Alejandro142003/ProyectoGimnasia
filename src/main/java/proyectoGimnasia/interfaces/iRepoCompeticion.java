@@ -1,7 +1,8 @@
 package proyectoGimnasia.interfaces;
 
+import proyectoGimnasia.model.DTO.Competicion;
+
 public interface iRepoCompeticion {
-	void addCompetition();
-	void editCompetition();
-	void showComopetition();
+	boolean addCompetition(Competicion competicion);
+	Competicion showCompetition(String nombre);
 }
