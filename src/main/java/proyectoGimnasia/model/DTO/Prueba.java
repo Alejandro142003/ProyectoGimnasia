@@ -57,11 +57,12 @@ public class Prueba {
         this.participaciones = participaciones;
     }
 	
-	@Override
-	public String toString() {
-		return "Prueba [Tipo=" + tipo + ""
-				+ "/n Categoria=" + categoria 
-				+ "/n Aparato=" + aparato 
-				+ "/n Participaciones=" + participaciones + "]";
-	}
+    @Override
+    public String toString() {
+        return "Prueba:\n"
+             + " - Tipo: " + tipo + "\n"
+             + " - Categoría: " + categoria + "\n"
+             + " - Aparato: " + aparato + "\n";
+    }
+
 }
