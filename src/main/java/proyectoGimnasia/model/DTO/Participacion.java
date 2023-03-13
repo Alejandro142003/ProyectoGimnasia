@@ -1,6 +1,6 @@
 package proyectoGimnasia.model.DTO;
 
-import java.sql.Time;	//Preguntar en clase 
+import java.sql.Time;
 
 public class Participacion<T> {
     private T tipo;

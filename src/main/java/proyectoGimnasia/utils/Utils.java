@@ -1,5 +1,6 @@
 package proyectoGimnasia.utils;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Utils {
@@ -147,6 +148,44 @@ public class Utils {
 	public static void printObject(Object o) {
 		System.out.println(o);
 	}
+	
+	public static double getDouble(String text) {
+	    
+	    boolean validNum = true;
+	    Scanner scan = new Scanner(System.in);
+	    double num = 0;
+
+	    do {   
+	      try {
+	    	Utils.print(text);
+	        num = scan.nextDouble();
+
+	        if (num < 0) {
+	          validNum = true;
+	          Utils.print("Debe ingresar obligatoriamente un numero valido.");       
+	        }else{
+	          validNum = false;
+	        }
+
+	        
+	      }  catch (InputMismatchException ex) {
+	        
+	        scan.nextLine();
+	        validNum = true;
+	        Utils.print("Debe ingresar obligatoriamente un numero valido.");
+	        
+
+	      } catch (Exception e) {
+	        
+	        scan.nextLine();
+	        validNum = true;
+	        Utils.print("Debe ingresar obligatoriamente un numero valido.");
+
+	      }
+	    } while(validNum);
+	    
+	    return num;
+	  }
 	
 	
 }
