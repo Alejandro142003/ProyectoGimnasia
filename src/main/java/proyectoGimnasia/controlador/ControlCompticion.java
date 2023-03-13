@@ -3,8 +3,11 @@ package proyectoGimnasia.controlador;
 import java.time.LocalDate;
 
 import proyectoGimnasia.interfaces.iControllerCompeticion;
+import proyectoGimnasia.interfaces.iControllerPruba;
 import proyectoGimnasia.interfaces.iRepoCompeticion;
+import proyectoGimnasia.interfaces.iRepoPrueba;
 import proyectoGimnasia.model.RepoCompeticiones;
+import proyectoGimnasia.model.RepoPrueba;
 import proyectoGimnasia.model.DTO.Competicion;
 import proyectoGimnasia.utils.Utils;
 
@@ -31,6 +34,7 @@ public class ControlCompticion implements iControllerCompeticion{
 					break;
 				case 3:
 					controllerShowCompetition();
+					break;
 				default:
 					Utils.print("Opción incorrecta");
 					break;
