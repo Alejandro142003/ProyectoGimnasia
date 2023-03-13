@@ -6,13 +6,13 @@ public class Grupo {
 	private String groupName;
 	private int dorsal;
 	private String club;
-	private ArrayList<Gimanasta> listGimnasta;
+	private ArrayList<Gimnasta> listGimnasta;
 
     public Grupo() {
-        listGimnasta = new ArrayList<Gimanasta>();
+        listGimnasta = new ArrayList<Gimnasta>();
     }
   
-    public Grupo(String groupName, int dorsal, String club, ArrayList<Gimanasta> listGimnasta) {
+    public Grupo(String groupName, int dorsal, String club, ArrayList<Gimnasta> listGimnasta) {
     
 		this.groupName = groupName;
 		this.dorsal = dorsal;
@@ -44,11 +44,11 @@ public class Grupo {
 		this.club = club;
 	}
 
-	public ArrayList<Gimanasta> getListGimnasta() {
+	public ArrayList<Gimnasta> getListGimnasta() {
 		return listGimnasta;
 	}
 
-	public void setListGimnasta(ArrayList<Gimanasta> listGimnasta) {
+	public void setListGimnasta(ArrayList<Gimnasta> listGimnasta) {
 		this.listGimnasta = listGimnasta;
 	}
 

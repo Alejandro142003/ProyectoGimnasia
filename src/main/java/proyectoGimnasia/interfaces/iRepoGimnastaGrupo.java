@@ -5,11 +5,8 @@ public interface iRepoGimnastaGrupo {
 	void editGymnast();
 	void deleteGymnast();
 	void showGymnast();
-
-	public interface iRepoGrupo {
-		void addGroup();
-		void editGroup();
-		void showGroup();
-		void deleteGroup();
-	}
+	void addGroup();
+	void editGroup();
+	void showGroup();
+	void deleteGroup();
 }
