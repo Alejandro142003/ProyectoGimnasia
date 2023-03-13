@@ -84,10 +84,9 @@ public class RepoPrueba implements iRepoPrueba {
         int index = -1;
         //bucle que se ejecuta mientras index sea menor a cero o >= al tamaño de la lista de pruebas
         while (index < 0 || index >= pruebasMostradas.size()) {
-            System.out.print("Seleccione la prueba que desea eliminar (ingrese el número correspondiente): ");
             try {
             	//Integer.parseInt() es para convertir la entrada del usuario en un número entero
-                index = Integer.parseInt(scanner.nextLine()) - 1;
+                index = Utils.leeEntero("Seleccione la prueba que desea eliminar (ingrese el número correspondiente): ") - 1;
                 //Si el usuario ingresa un valor no numérico se produce el error
             } catch (NumberFormatException e) {
                 System.out.println("Por favor ingrese un número válido.");
@@ -99,7 +98,6 @@ public class RepoPrueba implements iRepoPrueba {
 
         System.out.println("La prueba se ha eliminado");
     }
-
 
 
     /**

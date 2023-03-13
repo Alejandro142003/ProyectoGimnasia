@@ -1,19 +1,19 @@
 package proyectoGimnasia.model.DTO;
 
-public class Gimanasta extends Persona{
+public class Gimnasta extends Persona{
 	
 	private String categoria;
 	private String club;
 	private int dorsal;
 
-	public Gimanasta() {
+	public Gimnasta() {
 		super();
 		this.categoria = "";
 		this.club="";
 		this.dorsal=0;
 	}
 
-	public Gimanasta(String dni, String nombre, String correo, int telefono, String categoria, String club,
+	public Gimnasta(String dni, String nombre, String correo, int telefono, String categoria, String club,
 			int dorsal) {
 		super(dni, nombre, correo, telefono);
 		this.categoria = categoria;
@@ -61,7 +61,7 @@ public class Gimanasta extends Persona{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Gimanasta other = (Gimanasta) obj;
+		Gimnasta other = (Gimnasta) obj;
 		if (dorsal != other.dorsal)
 			return false;
 		return true;
