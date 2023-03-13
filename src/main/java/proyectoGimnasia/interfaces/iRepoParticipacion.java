@@ -1,8 +1,10 @@
 package proyectoGimnasia.interfaces;
 
-public interface iRepoParticipacion {
-	void addParticipation();
-	void editParticipation();
-	void deleteParticipation();
-	void showParticipation();
+import proyectoGimnasia.model.DTO.Participacion;
+
+public interface iRepoParticipacion<T> {
+	boolean addParticipation(Participacion<T> newParticipacion);
+	boolean editParticipation(int dorsal);
+	boolean deleteParticipation(int dorsal);
+	Participacion<T> showParticipation(int dorsal);
 }
