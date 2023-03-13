@@ -64,6 +64,9 @@ public class RepoPrueba implements iRepoPrueba {
      * Metodo para mostrar las pruebas creadas por consola y creadas a fuego
      */
     public List<Prueba> MostrarPrueba() {
+    	for(Prueba prueba: pruebas) {
+    		System.out.println(prueba.toString());
+    	}
         return pruebas;
     }
   
@@ -106,7 +109,32 @@ public class RepoPrueba implements iRepoPrueba {
      * Método que editar una prueba ya creada
      */
     public void EditarPrueba(Prueba prueba, String nuevoTipo, Categoria nuevaCategoria, Aparato nuevoAparato) {
-        //Buscamos una prueba con los mismos valores para evitar editar una prueba y esta sea igual que otra ya creada
+    	//PARA VER TODAS LAS PRUEBAS QUE HAY ANTES DE HACER NADA
+    	Scanner scanner = new Scanner(System.in);
+        if (pruebas.isEmpty()) {
+            System.out.println("No hay pruebas disponibles para eliminar.");
+            return;
+        }
+        //mostrar la lista de pruebas que tenemos
+        System.out.println("Lista de pruebas:");
+        List<Prueba> pruebasMostradas = MostrarPrueba();
+        
+        //es el valor se va a utilizar para verificar que el número que ingresa el usuario es válido
+        int index = -1;
+        //bucle que se ejecuta mientras index sea menor a cero o >= al tamaño de la lista de pruebas
+        while (index < 0 || index >= pruebasMostradas.size()) {
+            System.out.print("Seleccione la prueba que desea eliminar (ingrese el número correspondiente): ");
+            try {
+            	//Integer.parseInt() es para convertir la entrada del usuario en un número entero
+                index = Integer.parseInt(scanner.nextLine()) - 1;
+                //Si el usuario ingresa un valor no numérico se produce el error
+            } catch (NumberFormatException e) {
+                System.out.println("Por favor ingrese un número válido.");
+            }
+        }
+    	
+    
+    	//Buscamos una prueba con los mismos valores para evitar editar una prueba y esta sea igual que otra ya creada
         boolean existeOtraPruebaIgual = pruebas.stream()
             .anyMatch(p -> p != prueba && p.getTipo().equals(nuevoTipo) 
                         && p.getCategoria() == nuevaCategoria 

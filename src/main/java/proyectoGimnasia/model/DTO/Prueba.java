@@ -59,7 +59,9 @@ public class Prueba {
 	
 	@Override
 	public String toString() {
-		return "Prueba [tipo=" + tipo + ", categoria=" + categoria + ", aparato=" + aparato + ", participaciones="
-				+ participaciones + "]";
+		return "Prueba [Tipo=" + tipo + ""
+				+ "/n Categoria=" + categoria 
+				+ "/n Aparato=" + aparato 
+				+ "/n Participaciones=" + participaciones + "]";
 	}
 }
