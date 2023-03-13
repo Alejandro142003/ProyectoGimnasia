@@ -1,8 +1,10 @@
 package proyectoGimnasia.vistas;
 
-public class PruebaView {
+import proyectoGimnasia.interfaces.iGUIPrueba;
+
+public class PruebaView implements iGUIPrueba{
 	
-	public static void edCompMenu() {
+	public void showEventMenu() {
 		print(" ---------- Menú Editar Competición ---------- ");
 		print("|                                             |");
 		print("|                                             |");

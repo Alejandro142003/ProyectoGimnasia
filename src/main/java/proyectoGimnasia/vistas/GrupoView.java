@@ -1,8 +1,10 @@
 package proyectoGimnasia.vistas;
 
-public class GrupoView {
+import proyectoGimnasia.interfaces.iGUIGrupo;
 
-	public static void groupMenu() {
+public class GrupoView implements iGUIGrupo{
+
+	public void showGroupMenu() {
 		print(" ---------- Menú Grupos ---------- ");
 		print("|                                 |");
 		print("|                                 |");

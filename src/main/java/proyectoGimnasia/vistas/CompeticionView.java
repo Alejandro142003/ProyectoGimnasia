@@ -1,8 +1,10 @@
 package proyectoGimnasia.vistas;
 
-public class CompeticionView {
+import proyectoGimnasia.interfaces.iGUICompeticion;
+
+public class CompeticionView implements iGUICompeticion{
 	
-	public static void competitionMenu() {
+	public void competitionMenu() {
 		print(" ---------- Menú Competición ---------- ");
 		print("|                                      |");
 		print("|                                      |");

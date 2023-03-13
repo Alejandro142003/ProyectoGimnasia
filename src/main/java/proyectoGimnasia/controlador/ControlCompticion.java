@@ -4,22 +4,25 @@ import java.time.LocalDate;
 
 import proyectoGimnasia.interfaces.iControllerCompeticion;
 import proyectoGimnasia.interfaces.iControllerPruba;
+import proyectoGimnasia.interfaces.iGUICompeticion;
 import proyectoGimnasia.interfaces.iRepoCompeticion;
 import proyectoGimnasia.interfaces.iRepoPrueba;
 import proyectoGimnasia.model.RepoCompeticiones;
 import proyectoGimnasia.model.RepoPrueba;
 import proyectoGimnasia.model.DTO.Competicion;
 import proyectoGimnasia.utils.Utils;
+import proyectoGimnasia.vistas.CompeticionView;
 
 public class ControlCompticion implements iControllerCompeticion{
 	private iRepoCompeticion repoComp = new RepoCompeticiones();
+	private iGUICompeticion guiComp = new CompeticionView();
 
 	public void controlCompetitionMenu(int op) {
 		int option;
 		boolean valid = false;
 	
 		do {
-			
+			guiComp.competitionMenu();
 			option=Utils.leeEntero("Elije la opcion: ");
 			switch(option) {
 				case 0:

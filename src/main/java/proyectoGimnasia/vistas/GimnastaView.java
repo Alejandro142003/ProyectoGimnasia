@@ -1,8 +1,10 @@
 package proyectoGimnasia.vistas;
 
-public class GimnastaView {
+import proyectoGimnasia.interfaces.iGUIGimnasta;
+
+public class GimnastaView implements iGUIGimnasta{
 	
-	public static void competitorMenu() {
+	public void showGymnastMenu() {
 		print(" ---------- Menú Participantes ---------- ");
 		print("|                                        |");
 		print("|                                        |");
@@ -20,4 +22,6 @@ public class GimnastaView {
 	public static void print (String text) {
 		System.out.println(text);
 	}
+
+	
 }

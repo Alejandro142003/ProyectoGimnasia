@@ -1,10 +1,12 @@
 package proyectoGimnasia.vistas;
 
-public class MainView {
+import proyectoGimnasia.interfaces.iGUI;
+
+public class MainView implements iGUI{
 	
 	
 	
-	public static void mainMenu() {
+	public void showMainMenu() {
 		print(" ---------- Menú Principal ---------- ");
 		print("|                                    |");
 		print("|                                    |");
@@ -19,4 +21,6 @@ public class MainView {
 	public static void print (String text) {
 		System.out.println(text);
 	}
+
+	
 }

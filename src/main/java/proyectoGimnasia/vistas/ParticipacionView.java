@@ -1,8 +1,10 @@
 package proyectoGimnasia.vistas;
 
-public class ParticipacionView {
+import proyectoGimnasia.interfaces.iGUIParticipacion;
+
+public class ParticipacionView implements iGUIParticipacion{
 	
-	public static void subCompetitorMenu() {
+	public void showParticipationMenu() {
 		print(" ---------- Menú Editar Competición ---------- ");
 		print("|                                             |");
 		print("|                                             |");
