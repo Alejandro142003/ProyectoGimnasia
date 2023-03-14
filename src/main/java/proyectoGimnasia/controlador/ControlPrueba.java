@@ -3,9 +3,11 @@ package proyectoGimnasia.controlador;
 import java.util.List;
 
 import proyectoGimnasia.interfaces.iControllerPruba;
+import proyectoGimnasia.interfaces.iGUIPrueba;
 import proyectoGimnasia.model.RepoPrueba;
 import proyectoGimnasia.model.DTO.Prueba;
 import proyectoGimnasia.utils.Utils;
+import proyectoGimnasia.vistas.PruebaView;
 
 
 
@@ -18,46 +20,48 @@ public class ControlPrueba implements iControllerPruba {
 	}
 	
 	RepoPrueba repoPrueba = new RepoPrueba();
-
-	@Override
-	public void executePruebaMenu() {
-	    int opcion = 0;
-	    do {
-	        System.out.println("Menú de Pruebas:");
-	        System.out.println("*      1. Agregar Prueba      *");
-	        System.out.println("*      2. Mostrar Pruebas     *");
-	        System.out.println("*      3. Editar Prueba       *");
-	        System.out.println("*      4. Eliminar Prueba     *");
-	        System.out.println("*      0. Salir               *");
-
-	        opcion = Utils.leeEntero("Seleccione una opción: ");
-	        controlPruebaMenu(opcion);
-	    } while (opcion != 0);
-	}
+	private iGUIPrueba vistaprueba = new PruebaView();
 
 
 	@Override
 	public void controlPruebaMenu(int op) {
-	    switch (op) {
-	        case 0:
-	            System.out.println("Has elegido salir de prueba");
-	            break;
-	        case 1:
-	            controllerAgregarPrueba();
-	            break;
-	        case 2:
-	            controllerEliminarPrueba();
-	            break;
-	        case 3:
-	            controllerEditarPrueba();
-	            break;
-	        case 4:
-	            controllerMostrarPrueba();
-	            break;
-	        default:
-	            System.out.println("Selecione una opción válida");
-	            break;
-	    }
+		int option;
+		boolean valid = false;
+	
+		do {
+			vistaprueba.showEventMenu();
+			option=Utils.leeEntero("Elije la opcion: ");
+			switch(option) {
+				case 1:
+					//falta llamar al nombre de competición actual
+					break;
+				case 2:
+					controllerAgregarPrueba();
+					break;
+				case 3:
+					controllerEditarPrueba();
+					break;
+				case 4:
+					controllerMostrarPrueba();
+					break;
+				case 5:
+					controllerEliminarPrueba();
+					break;
+				case 6:
+					this.parent.cpart.controlPartitionMenu(option);
+					break;
+				case 7:
+					valid=true;
+					Utils.print("Has salido correctamente del menu competicion.");
+					break;
+					
+				default:
+					Utils.print("Opción incorrecta");
+					break;
+			}
+		}while(!valid);
+		
+		
 	}
 
 	@Override

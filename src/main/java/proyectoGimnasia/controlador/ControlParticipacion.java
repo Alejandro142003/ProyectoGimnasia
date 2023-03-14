@@ -11,6 +11,13 @@ import proyectoGimnasia.utils.Utils;
 public class ControlParticipacion<T> implements iControllerParticipacion {
 	private iRepoParticipacion<T> repoParti = new RepoParticipacion<T>();
 
+	
+	private ControlPrincipal parent;
+	public ControlParticipacion(ControlPrincipal parent) {
+		this.parent = parent;
+	}
+	
+	
 	public void controlPartitionMenu(int op) {
 		int option;
 		boolean valid = false;
