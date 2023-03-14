@@ -17,6 +17,11 @@ public class ControlCompticion implements iControllerCompeticion{
 	private iRepoCompeticion repoComp = new RepoCompeticiones();
 	private iGUICompeticion guiComp = new CompeticionView();
 
+	private ControlPrincipal parent;
+	public ControlCompticion(ControlPrincipal parent) {
+		this.parent = parent;
+	}
+	
 	public void controlCompetitionMenu(int op) {
 		int option;
 		boolean valid = false;
@@ -34,6 +39,7 @@ public class ControlCompticion implements iControllerCompeticion{
 					break;
 				case 2:
 					controllerEditCompetition();
+					this.parent.cp.controlPruebaMenu(option);
 					break;
 				case 3:
 					controllerShowCompetition();

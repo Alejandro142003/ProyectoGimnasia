@@ -12,6 +12,10 @@ import proyectoGimnasia.utils.Utils;
 
 public class ControlPrueba implements iControllerPruba {
 
+	private ControlPrincipal parent;
+	public ControlPrueba(ControlPrincipal parent) {
+		this.parent = parent;
+	}
 	
 	RepoPrueba repoPrueba = new RepoPrueba();
 
