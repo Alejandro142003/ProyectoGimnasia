@@ -4,6 +4,11 @@ import proyectoGimnasia.interfaces.iControllerGrupo;
 
 public class ControlGrupo implements iControllerGrupo{
 
+	private ControlPrincipal parent;
+	public ControlGrupo(ControlPrincipal parent) {
+		this.parent = parent;
+	}
+	
 	@Override
 	public void executeGroupMenu() {
 		// TODO Auto-generated method stub
