@@ -58,7 +58,6 @@ public class ControlPrueba implements iControllerPruba {
 
 	@Override
 	public void controllerAgregarPrueba() {
-	    RepoPrueba repoPrueba = new RepoPrueba();
 	    repoPrueba.AgregarPrueba();
 	}
 
@@ -70,14 +69,12 @@ public class ControlPrueba implements iControllerPruba {
 
 	@Override
 	public void controllerEliminarPrueba() {
-	    RepoPrueba repoPrueba = new RepoPrueba();
 	    repoPrueba.EliminarPrueba();
 	}
 
 
 	@Override
 	public void controllerMostrarPrueba() {
-	    RepoPrueba repoPrueba = new RepoPrueba();
 	    List<Prueba> pruebas = repoPrueba.MostrarPrueba();
 	    if (pruebas.size() == 0) {
 	        System.out.println("No hay pruebas registradas en el sistema.");
