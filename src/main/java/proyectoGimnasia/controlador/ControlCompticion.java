@@ -30,10 +30,6 @@ public class ControlCompticion implements iControllerCompeticion{
 			guiComp.competitionMenu();
 			option=Utils.leeEntero("Elije la opcion: ");
 			switch(option) {
-				case 0:
-					valid=true;
-					Utils.print("Has salido correctamente del menu competicion.");
-					break;
 				case 1:
 					controllerAddCompetition();
 					break;
@@ -43,6 +39,10 @@ public class ControlCompticion implements iControllerCompeticion{
 					break;
 				case 3:
 					controllerShowCompetition();
+					break;
+				case 4:
+					valid=true;
+					Utils.print("Has salido correctamente del menu competicion.");
 					break;
 				default:
 					Utils.print("Opción incorrecta");
