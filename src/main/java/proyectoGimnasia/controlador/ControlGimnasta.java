@@ -7,6 +7,11 @@ public class ControlGimnasta implements iControllerGimnasta {
 
 	RepoGimnastas RepoGimnstasGrupo = new RepoGimnastas();
 	
+	private ControlPrincipal parent;
+	public ControlGimnasta(ControlPrincipal parent) {
+		this.parent = parent;
+	}
+	
 	@Override
 	public void controlGymnastMenu(int op) {
 		RepoGimnstasGrupo.addGymnast();

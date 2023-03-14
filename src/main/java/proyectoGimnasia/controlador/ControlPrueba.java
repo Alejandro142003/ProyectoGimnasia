@@ -2,7 +2,7 @@ package proyectoGimnasia.controlador;
 
 import java.util.List;
 
-import proyectoGimnasia.interfaces.iControllerPruba;
+import proyectoGimnasia.interfaces.iControllerPrueba;
 import proyectoGimnasia.interfaces.iGUIPrueba;
 import proyectoGimnasia.model.RepoPrueba;
 import proyectoGimnasia.model.DTO.Prueba;
@@ -12,7 +12,7 @@ import proyectoGimnasia.vistas.PruebaView;
 
 
 
-public class ControlPrueba implements iControllerPruba {
+public class ControlPrueba implements iControllerPrueba {
 
 	private ControlPrincipal parent;
 	public ControlPrueba(ControlPrincipal parent) {

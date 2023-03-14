@@ -3,7 +3,7 @@ package proyectoGimnasia.controlador;
 import java.time.LocalDate;
 
 import proyectoGimnasia.interfaces.iControllerCompeticion;
-import proyectoGimnasia.interfaces.iControllerPruba;
+import proyectoGimnasia.interfaces.iControllerPrueba;
 import proyectoGimnasia.interfaces.iGUICompeticion;
 import proyectoGimnasia.interfaces.iRepoCompeticion;
 import proyectoGimnasia.interfaces.iRepoPrueba;
