@@ -1,7 +1,7 @@
 package proyectoGimnasia.vistas;
 
 import proyectoGimnasia.interfaces.iGUIPrueba;
-
+//Vista pruebas
 public class PruebaView implements iGUIPrueba{
 	
 	public void showEventMenu() {
