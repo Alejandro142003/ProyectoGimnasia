@@ -11,10 +11,6 @@ import proyectoGimnasia.utils.Utils;
 public class ControlParticipacion<T> implements iControllerParticipacion {
 	private iRepoParticipacion<T> repoParti = new RepoParticipacion<T>();
 
-	public void executePartitionMenu() {
-		
-	}
-
 	public void controlPartitionMenu(int op) {
 		int option;
 		boolean valid = false;
