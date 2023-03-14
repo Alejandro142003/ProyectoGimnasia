@@ -1,12 +1,8 @@
 package proyectoGimnasia.interfaces;
 
-public interface iRepoGimnastaGrupo {
+public interface iRepoGimnasta {
 	void addGymnast();
 	void editGymnast();
 	void deleteGymnast();
 	void showGymnast();
-	void addGroup();
-	void editGroup();
-	void showGroup();
-	void deleteGroup();
 }

@@ -9,15 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import proyectoGimnasia.interfaces.iRepoGimnastaGrupo;
+import proyectoGimnasia.interfaces.iRepoGimnasta;
 
-public class RepoGimnastasGrupo implements iRepoGimnastaGrupo {
+public class RepoGimnastas implements iRepoGimnasta{
 	private List<Gimnasta> gimnastas;
-	private List<Grupo> grupos;
 	
-	public RepoGimnastasGrupo() {
+	public RepoGimnastas() {
         gimnastas = new ArrayList<Gimnasta>();
-        grupos = new ArrayList<Grupo>();
+        
     }
     
 	public void addGymnast() {
@@ -62,30 +61,6 @@ public class RepoGimnastasGrupo implements iRepoGimnastaGrupo {
 	}
 
 	public void showGymnast() {
-		Gimnasta.toString();
 		
-	}
-	
-	public void addGroup() {
-		
-		String nombre = Utils.leeString("Introduce el nombre del grupo: ");
-		String club = Utils.leeString("Introduce el nombre del club: ");
-		//ArrayList se usa en el controlador para añadir a los gimnastas preguntando si quiere añadir 
-		//otro mas cada vez que añade uno.
-	}
-	
-	public void editGroup() {
-		String nombre = Utils.leeString("Introduce el nombre del grupo: ");
-		String club = Utils.leeString("Introduce el nombre del club: ");
-		//ArrayList se usa en el controlador para añadir a los gimnastas preguntando si quiere añadir 
-		//otro mas cada vez que añade uno.
-	}
-	
-	public void showGroup() {
-		Grupo.toString();
-	}
-	
-	public void deleteGroup() {
-		//TODO
 	}
 }
