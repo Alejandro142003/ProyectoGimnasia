@@ -5,7 +5,9 @@ import proyectoGimnasia.interfaces.iGUIGimnasta;
 public class GimnastaView implements iGUIGimnasta{
 	
 	public void showGymnastMenu() {
-		print(" ---------- Menú Participantes ---------- ");
+		print("+----------------------------------------+");
+		print("|            MENU PARTICIPANTES          |");
+		print("+----------------------------------------+");
 		print("|                                        |");
 		print("|                                        |");
 		print("|  {1} Añadir gimnasta                   |");
@@ -15,7 +17,7 @@ public class GimnastaView implements iGUIGimnasta{
 		print("|  {5} Grupo                             |");
 		print("|  {6} Salir                             |");
 		print("|                                        |");
-		print(" ---------------------------------------- ");
+		print("+----------------------------------------+");
 		
 	}
 	
