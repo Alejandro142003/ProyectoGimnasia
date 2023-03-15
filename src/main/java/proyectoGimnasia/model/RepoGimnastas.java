@@ -12,47 +12,22 @@ import java.util.Scanner;
 import proyectoGimnasia.interfaces.iRepoGimnasta;
 
 public class RepoGimnastas implements iRepoGimnasta{
-	private List<Gimnasta> gimnastas;
-	
-	public RepoGimnastas() {
-        gimnastas = new ArrayList<Gimnasta>();
-        
-    }
+	private ArrayList<Gimnasta> gimnastas = new ArrayList<Gimnasta>();
     
-	public void addGymnast() {
-		Gimnasta Gimnasta = new Gimnasta();
-		int dorsal = Utils.leeEntero("Introduce el numero del dorsal: ");
-		Gimnasta.setDorsal(dorsal);
-		String dni = Utils.leeString("Introduce el dni: ");
-		Gimnasta.setDni(dni);
-		String nombre = Utils.leeString("Introduce el nombre: ");
-		Gimnasta.setNombre(nombre);
-		String correo = Utils.leeString("Introduce un correo electrónico: ");
-		Gimnasta.setCorreo(correo);
-		int telefono = Utils.leeEntero("Introduce un numero de telefono; ");
-		Gimnasta.setTelefono(telefono);
-		String categoria = Utils.leeString("Introduce la categoria del Gimnasta: ");
-		Gimnasta.setCategoria(categoria);
-		String club = Utils.leeString("Introduce el club del Gimnasta: ");
-		Gimnasta.setClub(club);
+	public boolean addGymnast(Gimnasta gimnasta) {
+		
+		boolean result=false;
+		if(!gimnastas.contains(gimnasta) && gimnasta.getNombre()==null) {
+			gimnastas.add(gimnasta);
+			result=true;
+		}
+		return result;
+
 	}
 
 	public void editGymnast() {
-		Gimnasta Gimnasta = null;
-		int dorsal = Utils.leeEntero("Introduce el numero del dorsal: ");
-		Gimnasta.setDorsal(dorsal);
-		String dni = Utils.leeString("Introduce el dni: ");
-		Gimnasta.setDni(dni);
-		String nombre = Utils.leeString("Introduce el nombre: ");
-		Gimnasta.setNombre(nombre);
-		String correo = Utils.leeString("Introduce un correo electrónico: ");
-		Gimnasta.setCorreo(correo);
-		int telefono = Utils.leeEntero("Introduce un numero de telefono; ");
-		Gimnasta.setTelefono(telefono);
-		String categoria = Utils.leeString("Introduce la categoria del Gimnasta: ");
-		Gimnasta.setCategoria(categoria);
-		String club = Utils.leeString("Introduce el club del Gimnasta: ");
-		Gimnasta.setClub(club);
+		//TODO
+		
 	}
 
 	public void deleteGymnast() {
