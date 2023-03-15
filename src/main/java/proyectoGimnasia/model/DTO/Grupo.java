@@ -82,7 +82,11 @@ public class Grupo {
 
 	@Override
 	public String toString() {
-		return "Grupo [groupName=" + groupName + ", dorsal=" + dorsal + ", club=" + club + "]";
+	    return "Grupo:\n"
+	         + " - Nombre del grupo: " + groupName + "\n"
+	         + " - Dorsal: " + dorsal + "\n"
+	         + " - Club: " + club + "\n";
 	}
+
 }
 
