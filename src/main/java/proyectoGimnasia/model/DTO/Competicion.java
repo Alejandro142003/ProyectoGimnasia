@@ -54,9 +54,13 @@ public class Competicion implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Competicion [nombre=" + nombre + ", descripcion=" + descripcion + ", fechaInicio=" + fechaInicio
-				+ ", pruebas=" + pruebas + "]";
+	    return "Competicion:\n"
+	         + " - Nombre: " + nombre + "\n"
+	         + " - Descripcion: " + descripcion + "\n"
+	         + " - Fecha de inicio: " + fechaInicio + "\n"
+	         + " - Pruebas: " + pruebas + "\n";
 	}
+
 	
 	
 	

@@ -63,8 +63,12 @@ public class Participacion<T> {
 
 	@Override
 	public String toString() {
-		return "Participacion [tipo=" + tipo + ", hora=" + hora + ", puntuacion=" + puntuacion + ", dorsal=" + dorsal
-				+ "]";
+	    return "Participacion:\n"
+	         + " - Tipo: " + tipo + "\n"
+	         + " - Hora: " + hora + "\n"
+	         + " - Puntuacion: " + puntuacion + "\n"
+	         + " - Dorsal: " + dorsal + "\n";
 	}
+
 	
 }
