@@ -41,9 +41,12 @@ public class ControlCompeticion implements iControllerCompeticion{
 					controllerShowCompetition();
 					break;
 				case 4:
-					controllerShowAllCompetitions();
+					controllerDeleteCompetition();
 					break;
 				case 5:
+					controllerShowAllCompetitions();
+					break;
+				case 6:
 					valid=true;
 					Utils.print("Has salido correctamente del menu competicion.");
 					break;
@@ -82,7 +85,10 @@ public class ControlCompeticion implements iControllerCompeticion{
 		
 		
 	}
-
+	
+	public void controllerDeleteCompetition() {
+		compCrud.deleteCompetition(compCrud.findCompetition("Introduce el nombre de la competicion: "));
+	}
 	public void controllerShowCompetition() {
 		
 		String nombre=Utils.leeString("Introduce el nombre de la competicion que desea mostrar: ");
