@@ -58,46 +58,142 @@ public class ControlPrueba implements iControllerPrueba {
 	            }
 	        } while (!valid);
 	    }
-
-	    @Override
-	    public void controllerAddPrueba() {
-	        String tipo;
+	    
+	    public void controlPruebaMenu2(int op) {
+	        int option;
+	        boolean valid = false;
 	        do {
-	            tipo = Utils.leeString("Ingresa el tipo de prueba \n"
-	            						+ "(individual/grupo): ");
-	        } while (!tipo.equalsIgnoreCase("individual") && !tipo.equalsIgnoreCase("grupo"));
+	            guiPrueba.TipoPrueba();
+	            option = Utils.leeEntero("Elije la opcion: ");
+	            switch (option) {
+	                case 1:
+	                    Utils.print("Ha elegido 'Individual'");
+	                    valid = true;
+	                    break;
+	                case 2:
+	                    Utils.print("Ha elegido 'Grupo'");
+	                    valid = true;
+	                    break;
+	                default:
+	                    Utils.print("Opción incorrecta");
+	                    break;
+	            }
+	        } while (!valid);
+	    }
 
-	        String categoriaString = Utils.leeString("Introduce la categoría \n"
-	        							+ "(Prebenjamin/Benjamin/Alevin/Infantil/Junior/Senior): ");
-	        Categoria categoria = null;
-	        try {
-	            categoria = Enum.valueOf(Categoria.class, categoriaString);
-	        } catch (IllegalArgumentException e) {
-	            System.out.println("La categoría introducida no es válida");
-	            return;
-	        }
+	    public void controlPruebaMenu3(int op) {
+	        int option;
+	        boolean valid = false;
+	        
+	        Prueba prueba = new Prueba(); 
+	        
+	        do {
+	            guiPrueba.CategoriaPrueba();
+	            option = Utils.leeEntero("Elije la opcion: ");
+	            
+	            switch (option) {
+	                case 1:
+	                    prueba.setCategoria(Categoria.Prebenjamin);
+	                    valid = true;
+	                    break;
+	                case 2:
+	                    prueba.setCategoria(Categoria.Benjamin);
+	                    valid = true;
+	                    break;
+	                case 3:
+	                    prueba.setCategoria(Categoria.Alevin);
+	                    valid = true;
+	                    break;
+	                case 4:
+	                    prueba.setCategoria(Categoria.Infantil);
+	                    valid = true;
+	                    break;
+	                case 5:  
+	                    prueba.setCategoria(Categoria.Junior);
+	                    valid = true;
+	                    break;
+	                case 6:
+	                    prueba.setCategoria(Categoria.Senior);
+	                    valid = true;
+	                    break;
+	                default:
+	                    Utils.print("Opción incorrecta");
+	                    break;
+	            }
+	        } while (!valid);
+	    }
 
-	        String aparatoString = Utils.leeString("Introduce el aparato \n"
-	        							+ "(Mazas/Aro/Cinta/Cuerda/ManosLibres): ");
-	        Aparato aparato = null;
-	        try {
-	            aparato = Enum.valueOf(Aparato.class, aparatoString);
-	        } catch (IllegalArgumentException e) {
-	            System.out.println("El aparato introducido no es válido");
-	            return;
-	        }
+	    public void controlPruebaMenu4(int op) {
+	        int option;
+	        boolean valid = false;
+	        
+	        Prueba prueba = new Prueba(); 
+	        
+	        do {
+	            guiPrueba.CategoriaPrueba();
+	            option = Utils.leeEntero("Elije la opcion: ");
+	            
+	            switch (option) {
+	                case 1:
+	                    prueba.setAparato(Aparato.Mazas); 
+	                    valid = true;
+	                    break;
+	                case 2:
+	                    prueba.setAparato(Aparato.Aro);
+	                    valid = true;
+	                    break;
+	                case 3:
+	                    prueba.setAparato(Aparato.Cinta);
+	                    valid = true;
+	                    break;
+	                case 4:
+	                    prueba.setAparato(Aparato.Cuerda);
+	                    valid = true;
+	                    break;
+	                case 5: 
+	                    prueba.setAparato(Aparato.ManosLibres);
+	                    valid = true;
+	                    break;
+	                default:
+	                    Utils.print("Opción incorrecta");
+	                    break;
+	            }
+	        } while (!valid);
+	    }
+
+
+
+	    
+	    public void controllerAddPrueba() {
+	        int tipoPrueba;
+	        int categoriaPrueba;
+	        int aparatoPrueba;
+
+	        do {
+	            guiPrueba.TipoPrueba();
+	            tipoPrueba = Utils.leeEntero("Elije el tipo de prueba: ");
+	        } while (tipoPrueba < 1 || tipoPrueba > 2);
+
+	        do {
+	            guiPrueba.CategoriaPrueba();
+	            categoriaPrueba = Utils.leeEntero("Elije la categoria de la prueba: ");
+	        } while (categoriaPrueba < 1 || categoriaPrueba > 6);
+
+	        do {
+	            guiPrueba.AparatoPrueba();
+	            aparatoPrueba = Utils.leeEntero("Elije el aparato de la prueba: ");
+	        } while (aparatoPrueba < 1 || aparatoPrueba > 5);
 
 	        Prueba prueba = new Prueba();
-	        prueba.setTipo(tipo);
-	        prueba.setCategoria(categoria);
-	        prueba.setAparato(aparato);
+	        prueba.setTipo(tipoPrueba == 1 ? "Individual" : "Grupo");
+	        prueba.setCategoria(Categoria.values()[categoriaPrueba - 1]);
+	        prueba.setAparato(Aparato.values()[aparatoPrueba -1]);
 
-	        if (repoPrueba.addPrueba(prueba)) {
-	            Utils.print("Prueba agregada correctamente");
-	        } else {
-	            Utils.print("Error al agregar la prueba");
-	        }
+	        repoPrueba.addPrueba(prueba);
+
+	        Utils.print("Prueba creada correctamente.");
 	    }
+
 
 
 
@@ -106,48 +202,46 @@ public class ControlPrueba implements iControllerPrueba {
 	        List<Prueba> pruebas = repoPrueba.getPruebas();
 	        if (pruebas.isEmpty()) {
 	            Utils.print("No hay pruebas registradas.");
-	        } else {
-	            Utils.print("Lista de pruebas:");
-	            for (int i = 0; i < pruebas.size(); i++) {
-	                Utils.print(String.format("%d. %s", i+1, pruebas.get(i).toString()));
-	            }
-	            int index = Utils.leeEntero("Selecciona el índice de la prueba que quieres editar: ");
-	            if (index < 1 || index > pruebas.size()) {
-	                Utils.print("El índice seleccionado no es válido.");
-	                return;
-	            }
-	            Prueba prueba = pruebas.get(index-1);
-
-	            String tipo;
-	            do {
-	                tipo = Utils.leeString("Ingresa el tipo de prueba (individual/grupo): ");
-	            } while (!tipo.equalsIgnoreCase("individual") && !tipo.equalsIgnoreCase("grupo"));
-
-	            String categoriaString = Utils.leeString("Introduce la categoría: ");
-	            Categoria categoria = null;
-	            try {
-	                categoria = Enum.valueOf(Categoria.class, categoriaString);
-	            } catch (IllegalArgumentException e) {
-	                Utils.print("La categoría introducida no es válida");
-	                return;
-	            }
-
-	            String aparatoString = Utils.leeString("Introduce el aparato: ");
-	            Aparato aparato = null;
-	            try {
-	                aparato = Enum.valueOf(Aparato.class, aparatoString);
-	            } catch (IllegalArgumentException e) {
-	                Utils.print("El aparato introducido no es válido");
-	                return;
-	            }
-
-	            prueba.setTipo(tipo);
-	            prueba.setCategoria(categoria);
-	            prueba.setAparato(aparato);
-
-	            Utils.print("La prueba ha sido editada correctamente.");
+	            return;
 	        }
+
+	        Utils.print("Lista de pruebas:");
+            for (int i = 0; i < pruebas.size(); i++) {
+                Utils.print(String.format("%d. %s", i+1, pruebas.get(i).toString()));
+            }
+	        int index = Utils.leeEntero("Selecciona el índice de la prueba que quieres editar: ");
+	        if (index < 1 || index > pruebas.size()) {
+	            Utils.print("El índice seleccionado no es válido.");
+	            return;
+	        }
+
+	        Prueba prueba = pruebas.get(index-1);
+
+	        int tipoPrueba;
+	        do {
+	            guiPrueba.TipoPrueba();
+	            tipoPrueba = Utils.leeEntero("Elije el tipo de prueba: ");
+	        } while (tipoPrueba < 1 || tipoPrueba > 2);
+
+	        int categoriaPrueba;
+	        do {
+	            guiPrueba.CategoriaPrueba();
+	            categoriaPrueba = Utils.leeEntero("Elije la categoria de la prueba: ");
+	        } while (categoriaPrueba < 1 || categoriaPrueba > 6);
+
+	        int aparatoPrueba;
+	        do {
+	            guiPrueba.AparatoPrueba();
+	            aparatoPrueba = Utils.leeEntero("Elije el aparato de la prueba: ");
+	        } while (aparatoPrueba < 1 || aparatoPrueba > 5);
+
+	        prueba.setTipo(tipoPrueba == 1 ? "Individual" : "Grupo");
+	        prueba.setCategoria(Categoria.values()[categoriaPrueba - 1]);
+	        prueba.setAparato(Aparato.values()[aparatoPrueba -1]);
+
+	        Utils.print("La prueba ha sido editada correctamente.");
 	    }
+
 
 	           
 

@@ -24,6 +24,9 @@ public class Prueba {
 	    this.aparato = aparato;
 	    this.participaciones = new ArrayList<Participacion>();
 	}
+	
+
+
 
 	public String getTipo() {
 		return tipo;
