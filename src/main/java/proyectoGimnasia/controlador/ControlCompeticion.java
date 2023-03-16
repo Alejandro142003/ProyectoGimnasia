@@ -13,12 +13,12 @@ import proyectoGimnasia.model.DTO.Competicion;
 import proyectoGimnasia.utils.Utils;
 import proyectoGimnasia.vistas.CompeticionView;
 
-public class ControlCompticion implements iControllerCompeticion{
+public class ControlCompeticion implements iControllerCompeticion{
 	private iRepoCompeticion repoComp = new RepoCompeticiones();
 	private iGUICompeticion guiComp = new CompeticionView();
 
 	private ControlPrincipal parent;
-	public ControlCompticion(ControlPrincipal parent) {
+	public ControlCompeticion(ControlPrincipal parent) {
 		this.parent = parent;
 	}
 	
@@ -56,7 +56,7 @@ public class ControlCompticion implements iControllerCompeticion{
 	public void controllerAddCompetition() {
 		String nombre=Utils.leeString("Introduce el nombre de la competicion: ");
 		String descripcion=Utils.leeString("Introduce la descripcion de la competicion: ");
-		LocalDate fechaInicio=null;
+		LocalDate fechaInicio= LocalDate.now();
 		Competicion nCompeticion = new Competicion(nombre, descripcion, fechaInicio);
 		if(repoComp.addCompetition(nCompeticion)==true) {
 			Utils.print("Se ha introducido correctamente la competicion.");
