@@ -1,20 +1,14 @@
 package proyectoGimnasia.model;
 
 import proyectoGimnasia.model.DTO.Gimnasta;
-import proyectoGimnasia.model.DTO.Grupo;
-import proyectoGimnasia.model.DTO.Participacion;
-import proyectoGimnasia.model.DTO.Prueba;
 import proyectoGimnasia.utils.Utils;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 import proyectoGimnasia.interfaces.iRepoGimnasta;
 
 public class RepoGimnastas implements iRepoGimnasta{
 	private ArrayList<Gimnasta> gimnastas = new ArrayList<Gimnasta>();
-    private Gimnasta gimnasta = new Gimnasta();
     
 	public boolean addGymnast(Gimnasta gimnasta) {
 		
@@ -27,22 +21,15 @@ public class RepoGimnastas implements iRepoGimnasta{
 
 	}
 
-	public boolean editGymnast(int dorsal) {
-		boolean result = false;
+	public void editGymnast() {
+		showAllGymnasts();
 		if (gimnastas.isEmpty()) {
 			Utils.print("No hay gimnastas para editar.");
-		} else {
-			for(Gimnasta gimnasta:gimnastas) {
-				Gimnasta.
-			}
 		}
-		return result;
-		
 	}
 
-	public void deleteGymnast(int dorsal) {
-		// TODO Auto-generated method stub
-		
+	public void deleteGymnast() {
+		showAllGymnasts();
 	}
 
 	public Gimnasta showGymnast(int dorsal) {
