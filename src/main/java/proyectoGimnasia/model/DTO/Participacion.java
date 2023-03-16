@@ -1,6 +1,7 @@
 package proyectoGimnasia.model.DTO;
 
 import java.sql.Time;
+import java.util.Calendar;
 
 public class Participacion<T> {
     private T tipo;
@@ -60,6 +61,16 @@ public class Participacion<T> {
 	public void setDorsal(Integer dorsal) {
 		this.dorsal = dorsal;
 	}
+	
+	/**
+	 * Metodo que comprueba si puede ser puntuado o no
+	 * @return boolean con true si puede o false si no puede
+	 */
+	 public boolean puedeSerPuntuado() {
+	        Calendar calendar = Calendar.getInstance();
+	        Time horaActual = new Time(calendar.getTimeInMillis());
+	        return hora.before(horaActual) || hora.equals(horaActual);
+	    }
 
 	@Override
 	public String toString() {
