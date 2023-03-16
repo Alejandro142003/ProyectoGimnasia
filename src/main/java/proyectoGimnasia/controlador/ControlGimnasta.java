@@ -80,7 +80,10 @@ public class ControlGimnasta implements iControllerGimnasta {
 
 	@Override
 	public void controllerShowGymnast() {
-		// TODO Auto-generated method stub
+		int index;
+		for (Gimnasta gimnasta: gimnastas) {
+			
+		}
 		
 	}
 
