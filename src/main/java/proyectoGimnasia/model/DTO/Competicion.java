@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Competicion implements Serializable{
 	
@@ -59,6 +60,21 @@ public class Competicion implements Serializable{
 	         + " - Descripcion: " + descripcion + "\n"
 	         + " - Fecha de inicio: " + fechaInicio + "\n"
 	         + " - Pruebas: " + pruebas + "\n";
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombre);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Competicion other = (Competicion) obj;
+		return Objects.equals(nombre, other.nombre);
 	}
 
 	
