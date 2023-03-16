@@ -7,10 +7,14 @@ import proyectoGimnasia.model.DTO.Categoria;
 import proyectoGimnasia.model.DTO.Prueba;
 
 public interface iRepoPrueba {
-    void AgregarPrueba();
-    void AgregarPrueba(Prueba prueba);
-    List<Prueba> MostrarPrueba();
-    void EliminarPrueba();
-    public void EditarPrueba(Prueba prueba, String nuevoTipo, Categoria nuevaCategoria, Aparato nuevoAparato);
+	public boolean addPrueba(Prueba p);
+	
+	public boolean editPrueba(Prueba p);
+	
+	public boolean deletePrueba(Prueba p);
+	
+	public List<Prueba> getPruebas();
+
+	Prueba findPrueba(String tipo, Categoria categoria, Aparato aparato);
 }
 

@@ -6,7 +6,7 @@ import proyectoGimnasia.utils.Utils;
 import proyectoGimnasia.vistas.MainView;
 
 public class ControlPrincipal<T> {
-	public ControlPrueba cp = new ControlPrueba(this);
+	public ControlPrueba cp = new ControlPrueba();
 	public ControlCompeticion cpp =new ControlCompeticion(this);
 	public ControlParticipacion<T> cpart= new ControlParticipacion(this);
 	public ControlGimnasta cGim= new ControlGimnasta(this);
