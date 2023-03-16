@@ -83,15 +83,7 @@ public class ControlPrueba implements iControllerPrueba {
 
 	@Override
 	public void controllerMostrarPrueba() {
-	    List<Prueba> pruebas = repoPrueba.MostrarPrueba();
-	    if (pruebas.size() == 0) {
-	        System.out.println("No hay pruebas registradas en el sistema.");
-	    } else {
-	        System.out.println("Lista de pruebas registradas:");
-	        for (Prueba p : pruebas) {
-	            System.out.println(p.toString());
-	        }
-	    }
+	    repoPrueba.MostrarPrueba();
 	}
 
 	

@@ -22,14 +22,14 @@ public class RepoPrueba implements iRepoPrueba {
      */
     public void AgregarPrueba() {
         //con esto consigo que el usuario entre un String y solo tenga las posiblidades de individual o grupo. Admine mayúsculas
-    	String tipo = "";
+        String tipo = "";
         while (!tipo.equalsIgnoreCase("individual") && !tipo.equalsIgnoreCase("grupo")) {
             tipo = Utils.leeString("Ingrese el tipo de la prueba (individual o grupo): ");
             if (!tipo.equalsIgnoreCase("individual") && !tipo.equalsIgnoreCase("grupo")) {
                 System.out.println("Tipo de prueba inválido. Por favor ingrese 'individual' o 'grupo'.");
             }
         }
-        
+
         String categoriaString = Utils.leeString("Introduce la categoría: ");
         Categoria categoria = null;
         try {
@@ -49,8 +49,10 @@ public class RepoPrueba implements iRepoPrueba {
         }
 
         Prueba prueba = new Prueba(tipo, categoria, aparato);
+
         AgregarPrueba(prueba);
     }
+
 
 
     /**
@@ -67,7 +69,8 @@ public class RepoPrueba implements iRepoPrueba {
     	for(Prueba prueba: pruebas) {
     		System.out.println(prueba.toString());
     	}
-        return pruebas;
+		return pruebas;
+    
     }
   
 

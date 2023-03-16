@@ -7,3 +7,5 @@ public enum Aparato {
 	Cuerda, 
 	ManosLibres;
 }
+
+
