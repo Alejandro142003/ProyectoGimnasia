@@ -158,12 +158,10 @@ public class ControlPrueba implements iControllerPrueba {
 	        if (pruebas.isEmpty()) {
 	            Utils.print("No hay pruebas registradas.");
 	        } else {
-	            for (int i = 0; i < pruebas.size(); i++) {
-	                Utils.print("Índice: " + i);
-	                Utils.print(pruebas.get(i).toString());
+	                Utils.print(pruebas.toString());
 	            }
 	        }
-	    }
+	    
 
 
 
