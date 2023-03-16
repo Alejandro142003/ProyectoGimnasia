@@ -74,22 +74,24 @@ public class ControlGimnasta implements iControllerGimnasta {
 
 	@Override
 	public void controllerEditGymnast() {
-		// TODO Auto-generated method stub
+		cotrollerShowAllGymnast();
+		Utils.print("");
 		
 	}
 
 	@Override
 	public void controllerShowGymnast() {
-		int index;
-		for (Gimnasta gimnasta: gimnastas) {
-			
-		}
-		
+		String dorsal=Utils.leeString("Introduce el dorsal del gimnasta que desea mostrar: ");
+		Utils.printObject(dorsal);
 	}
 
 	@Override
 	public void controllerDeleteGymnast() {
 		// TODO Auto-generated method stub
 		
+	}
+	public void cotrollerShowAllGymnast() {
+		String gimnastas = repoGim.showAllGymnasts();
+		Utils.printObject(gimnastas);
 	}
 }

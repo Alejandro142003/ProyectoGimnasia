@@ -4,8 +4,8 @@ import proyectoGimnasia.model.DTO.Gimnasta;
 
 public interface iRepoGimnasta {
 	boolean addGymnast(Gimnasta gimnasta);
-	boolean editGymnast(int dorsal);
-	void deleteGymnast(int dorsal);
+	void editGymnast();
+	void deleteGymnast();
 	Gimnasta showGymnast(int dorsal);
 	String showAllGymnasts();
 }
