@@ -11,7 +11,8 @@ public class CompeticionView implements iGUICompeticion{
 		print("|  {1} Crear competición               |");
 		print("|  {2} Editar competición              |");
 		print("|  {3} Mostrar competición             |");
-		print("|  {4} Salir                           |");
+		print("|  {4} Mostrar todas competiciones     |");
+		print("|  {5} Salir                           |");
 		print("|                                      |");
 		print(" -------------------------------------- ");
 		

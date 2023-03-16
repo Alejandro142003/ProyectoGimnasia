@@ -18,7 +18,16 @@ public class RepoCompeticiones implements iRepoCompeticion{
 	}
 
 	
-
+	public String showAllCompetitions() {
+		String result="";
+		for(Competicion c: competiciones) {
+			if(c!=null) {
+				result+=c+"\n";
+			}
+		}
+		return result;
+	}
+	
 
 	public Competicion showCompetition(String nombre) {
 		Competicion c = null;
