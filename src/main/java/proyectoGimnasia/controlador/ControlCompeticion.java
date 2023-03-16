@@ -2,6 +2,7 @@ package proyectoGimnasia.controlador;
 
 import java.time.LocalDate;
 
+import proyectoGimnasia.cruds.CompeticionCrud;
 import proyectoGimnasia.interfaces.iControllerCompeticion;
 import proyectoGimnasia.interfaces.iControllerPrueba;
 import proyectoGimnasia.interfaces.iGUICompeticion;
@@ -14,9 +15,8 @@ import proyectoGimnasia.utils.Utils;
 import proyectoGimnasia.vistas.CompeticionView;
 
 public class ControlCompeticion implements iControllerCompeticion{
-	private iRepoCompeticion repoComp = new RepoCompeticiones();
 	private iGUICompeticion guiComp = new CompeticionView();
-
+	private CompeticionCrud compCrud;
 	private ControlPrincipal parent;
 	public ControlCompeticion(ControlPrincipal parent) {
 		this.parent = parent;
@@ -61,7 +61,7 @@ public class ControlCompeticion implements iControllerCompeticion{
 		String descripcion=Utils.leeString("Introduce la descripcion de la competicion: ");
 		LocalDate fechaInicio= LocalDate.now();
 		Competicion nCompeticion = new Competicion(nombre, descripcion, fechaInicio);
-		if(repoComp.addCompetition(nCompeticion)==true) {
+		if(compCrud.addCompetition(nCompeticion)==true) {
 			Utils.print("Se ha introducido correctamente la competicion.");
 		}else {
 			Utils.print("No se ha introducido la competicion.");
@@ -70,12 +70,15 @@ public class ControlCompeticion implements iControllerCompeticion{
 
 	public void controllerEditCompetition() {
 		Competicion c = null;
-		c = (Competicion) repoComp.showCompetition(Utils.leeString("Introduce el nombre de la que competicion que desea editar: "));
+		c = (Competicion) compCrud.findCompetition(Utils.leeString("Introduce el nombre de la que competicion que desea editar: "));
 		String descripcion = Utils.leeString("Introduce la nueva descripcion de la competicion: ");
 		LocalDate fechaInicio = null;
 		
-		c.setDescripcion(descripcion);
-		c.setFechaInicio(fechaInicio);
+		if(compCrud.editCompetition(c)==true) {
+			Utils.print("Los datos se han actualizado correctamente.");
+		} else {
+			Utils.print("No se ha actualizado correctamente.");
+		}
 		
 		
 	}
@@ -83,11 +86,11 @@ public class ControlCompeticion implements iControllerCompeticion{
 	public void controllerShowCompetition() {
 		
 		String nombre=Utils.leeString("Introduce el nombre de la competicion que desea mostrar: ");
-		Utils.printObject(repoComp.showCompetition(nombre));
+		Utils.printObject(compCrud.findCompetition(nombre));
 	}
 	
 	public void controllerShowAllCompetitions() {
-		String competiciones = repoComp.showAllCompetitions();
+		String competiciones = compCrud.showAll();
 		Utils.printObject(competiciones);
 	}
 }
