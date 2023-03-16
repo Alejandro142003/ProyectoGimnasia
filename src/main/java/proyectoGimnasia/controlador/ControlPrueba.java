@@ -164,6 +164,7 @@ public class ControlPrueba implements iControllerPrueba {
 
 
 	    
+	    @Override
 	    public void controllerAddPrueba() {
 	        int tipoPrueba;
 	        int categoriaPrueba;
@@ -184,15 +185,26 @@ public class ControlPrueba implements iControllerPrueba {
 	            aparatoPrueba = Utils.leeEntero("Elije el aparato de la prueba: ");
 	        } while (aparatoPrueba < 1 || aparatoPrueba > 5);
 
+	        // Verificar si ya existe una prueba con el mismo tipo, categoría y aparato
+	        for (Prueba prueba : repoPrueba.getPruebas()) {
+	            if (prueba.getTipo().equalsIgnoreCase(tipoPrueba == 1 ? "Individual" : "Grupo")
+	                    && prueba.getCategoria() == Categoria.values()[categoriaPrueba - 1]
+	                    && prueba.getAparato() == Aparato.values()[aparatoPrueba - 1]) {
+	                Utils.print("Ya existe una prueba con el mismo tipo, categoría y aparato. No se puede crear otra.");
+	                return;
+	            }
+	        }
+
 	        Prueba prueba = new Prueba();
 	        prueba.setTipo(tipoPrueba == 1 ? "Individual" : "Grupo");
 	        prueba.setCategoria(Categoria.values()[categoriaPrueba - 1]);
-	        prueba.setAparato(Aparato.values()[aparatoPrueba -1]);
+	        prueba.setAparato(Aparato.values()[aparatoPrueba - 1]);
 
 	        repoPrueba.addPrueba(prueba);
 
 	        Utils.print("Prueba creada correctamente.");
 	    }
+
 
 
 
