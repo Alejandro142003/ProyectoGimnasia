@@ -80,7 +80,12 @@ public class Persona {
 	
 	@Override
 	public String toString() {
-		return "Persona [dni=" + dni + ", nombre=" + nombre + ", correo=" + correo + ", telefono=" + telefono + "]";
+	    return "Persona:\n"
+	         + " - DNI: " + dni + "\n"
+	         + " - Nombre: " + nombre + "\n"
+	         + " - Correo: " + correo + "\n"
+	         + " - Telefono: " + telefono + "\n";
 	}
+
 
 }
