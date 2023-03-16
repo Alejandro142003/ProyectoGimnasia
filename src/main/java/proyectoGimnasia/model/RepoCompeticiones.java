@@ -10,7 +10,7 @@ public class RepoCompeticiones implements iRepoCompeticion{
 	
 	public boolean addCompetition(Competicion competicion) {
 		boolean result=false;
-		if(!competiciones.contains(competicion) && competicion.getNombre()==null) {
+		if(!competiciones.contains(competicion)) {
 			competiciones.add(competicion);
 			result=true;
 		}
