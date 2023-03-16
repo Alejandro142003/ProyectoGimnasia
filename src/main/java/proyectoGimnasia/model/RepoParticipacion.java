@@ -28,7 +28,12 @@ public class RepoParticipacion<T> implements iRepoParticipacion<T> {
 					part.setParticipantes((T) Utils.leeString("Itroduce el tipo de participante"));
 					String horaString = Utils.leeString("Ingrese la hora de participación (en formato HH:mm:ss):");
 					part.setHora(Time.valueOf(horaString));
-					part.setPuntuacion(Utils.getDouble("Itroduce la puntuacion de la participacion"));
+					if (part.puedeSerPuntuado()) {
+						part.setPuntuacion(Utils.getDouble("Itroduce la puntuacion de la participacion"));
+					} else {
+						System.out.println("El participante " + part.getDorsal() + " no puede ser puntuado aún.");
+					}
+					
 					result= true;
 				} else {
 					System.out.println("No existe ninguna participacion con el dorsal "+"'"+dorsal+"'");

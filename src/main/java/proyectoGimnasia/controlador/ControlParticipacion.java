@@ -55,7 +55,7 @@ public class ControlParticipacion<T> implements iControllerParticipacion {
         T tipo = (T) Utils.leeString("Ingrese el tipo de participante:"); // asumiendo que el tipo se ingresa como una cadena
         String horaString = Utils.leeString("Ingrese la hora de participación (en formato HH:mm:ss):");
         Time hora = Time.valueOf(horaString);
-        double puntuacion = Utils.getDouble("Ingrese la puntuación obtenida:");
+        double puntuacion = 0;
         Integer dorsal = Utils.leeEntero("Ingrese el número dorsal:");
       
         Participacion<T> newParticipacion = new Participacion<T>(tipo, hora, puntuacion, dorsal);
