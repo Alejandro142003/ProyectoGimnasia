@@ -63,10 +63,12 @@ public class ControlPrueba implements iControllerPrueba {
 	    public void controllerAddPrueba() {
 	        String tipo;
 	        do {
-	            tipo = Utils.leeString("Ingresa el tipo de prueba (individual/grupo): ");
+	            tipo = Utils.leeString("Ingresa el tipo de prueba \n"
+	            						+ "(individual/grupo): ");
 	        } while (!tipo.equalsIgnoreCase("individual") && !tipo.equalsIgnoreCase("grupo"));
 
-	        String categoriaString = Utils.leeString("Introduce la categoría: ");
+	        String categoriaString = Utils.leeString("Introduce la categoría \n"
+	        							+ "(Prebenjamin/Benjamin/Alevin/Infantil/Junior/Senior): ");
 	        Categoria categoria = null;
 	        try {
 	            categoria = Enum.valueOf(Categoria.class, categoriaString);
@@ -75,7 +77,8 @@ public class ControlPrueba implements iControllerPrueba {
 	            return;
 	        }
 
-	        String aparatoString = Utils.leeString("Introduce el aparato: ");
+	        String aparatoString = Utils.leeString("Introduce el aparato \n"
+	        							+ "(Mazas/Aro/Cinta/Cuerda/ManosLibres): ");
 	        Aparato aparato = null;
 	        try {
 	            aparato = Enum.valueOf(Aparato.class, aparatoString);
