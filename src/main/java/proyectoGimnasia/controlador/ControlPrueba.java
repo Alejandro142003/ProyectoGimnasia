@@ -218,9 +218,9 @@ public class ControlPrueba implements iControllerPrueba {
 	        }
 
 	        Utils.print("Lista de pruebas:");
-            for (int i = 0; i < pruebas.size(); i++) {
-                Utils.print(String.format("%d. %s", i+1, pruebas.get(i).toString()));
-            }
+	        for (int i = 0; i < pruebas.size(); i++) {
+	            Utils.print(String.format("%d. %s", i+1, pruebas.get(i).toString()));
+	        }
 	        int index = Utils.leeEntero("Selecciona el índice de la prueba que quieres editar: ");
 	        if (index < 1 || index > pruebas.size()) {
 	            Utils.print("El índice seleccionado no es válido.");
@@ -247,12 +247,24 @@ public class ControlPrueba implements iControllerPrueba {
 	            aparatoPrueba = Utils.leeEntero("Elije el aparato de la prueba: ");
 	        } while (aparatoPrueba < 1 || aparatoPrueba > 5);
 
+	        // Verificar si ya existe una prueba con el mismo tipo, categoría y aparato
+	        for (Prueba p : pruebas) {
+	            if (p.getTipo().equals(tipoPrueba == 1 ? "Individual" : "Grupo")
+	                    && p.getCategoria() == Categoria.values()[categoriaPrueba - 1]
+	                    && p.getAparato() == Aparato.values()[aparatoPrueba - 1]
+	                    && !p.equals(prueba)) {
+	                Utils.print("Ya existe una prueba con el mismo tipo, categoría y aparato.");
+	                return;
+	            }
+	        }
+
 	        prueba.setTipo(tipoPrueba == 1 ? "Individual" : "Grupo");
 	        prueba.setCategoria(Categoria.values()[categoriaPrueba - 1]);
 	        prueba.setAparato(Aparato.values()[aparatoPrueba -1]);
 
 	        Utils.print("La prueba ha sido editada correctamente.");
 	    }
+
 
 
 	           
