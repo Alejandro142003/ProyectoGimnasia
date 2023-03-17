@@ -75,7 +75,7 @@ public class ControlCompeticion implements iControllerCompeticion{
 		Competicion c = null;
 		c = (Competicion) compCrud.findCompetition(Utils.leeString("Introduce el nombre de la que competicion que desea editar: "));
 		String descripcion = Utils.leeString("Introduce la nueva descripcion de la competicion: ");
-		LocalDate fechaInicio = null;
+		LocalDate fechaInicio = LocalDate.now();
 		
 		if(compCrud.editCompetition(c)==true) {
 			Utils.print("Los datos se han actualizado correctamente.");
