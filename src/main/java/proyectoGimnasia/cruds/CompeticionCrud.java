@@ -6,6 +6,7 @@ import java.util.List;
 
 import proyectoGimnasia.model.RepoCompeticiones;
 import proyectoGimnasia.model.DTO.Competicion;
+import proyectoGimnasia.utils.Utils;
 
 public class CompeticionCrud{
 	
@@ -69,8 +70,13 @@ public class CompeticionCrud{
 		List<Competicion> comp = rc.getCompeticiones();
 		String result = "";
 		for(Competicion c: comp) {
-			if(c!=null) {
-				result+=c+"\n";
+			
+			if(comp.isEmpty()) {
+					Utils.print("No hay competiciones registradas");
+			}else {
+				if(c!=null) {
+					result+=c+"\n";
+				}
 			}
 		}
 		return result;
