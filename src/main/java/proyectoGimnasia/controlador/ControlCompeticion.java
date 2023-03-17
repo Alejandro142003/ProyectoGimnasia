@@ -16,7 +16,7 @@ import proyectoGimnasia.vistas.CompeticionView;
 
 public class ControlCompeticion implements iControllerCompeticion{
 	private iGUICompeticion guiComp = new CompeticionView();
-	private CompeticionCrud compCrud;
+	private CompeticionCrud compCrud =new CompeticionCrud();
 	private ControlPrincipal parent;
 	public ControlCompeticion(ControlPrincipal parent) {
 		this.parent = parent;

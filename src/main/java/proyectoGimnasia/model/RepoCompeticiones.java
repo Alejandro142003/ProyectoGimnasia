@@ -25,19 +25,21 @@ public class RepoCompeticiones implements iRepoCompeticion ,Serializable{
 	
 	private List<Competicion> competiciones;
 	
+	
+	
+	
 	private RepoCompeticiones(boolean fake) {
-		
-	}
-	
-	
-	private RepoCompeticiones() {
-		RepoCompeticiones copia = XMLManager.readXML(new RepoCompeticiones(true), "competicion.xml");
+		RepoCompeticiones copia = XMLManager.readXML(new RepoCompeticiones(), "competicion.xml");
 		if(copia!=null) {
 			this.competiciones = copia.getCompeticiones();
 		}
 		if(this.competiciones==null) {
 			this.competiciones = new ArrayList<>();
 		}
+	}
+	
+	private RepoCompeticiones() {
+		this.competiciones = new ArrayList<>();
 	}
 	
 	public static RepoCompeticiones newInstance() {
@@ -59,35 +61,6 @@ public class RepoCompeticiones implements iRepoCompeticion ,Serializable{
 		return XMLManager.writeXML(this, "competicion.xml");
 	}
 
-	public boolean addCompetition(Competicion competicion) {
-		boolean result=false;
-		if(!competiciones.contains(competicion)) {
-			competiciones.add(competicion);
-			result=true;
-		}
-		return result;
-	}
-
 	
-	public String showAllCompetitions() {
-		String result="";
-		for(Competicion c: competiciones) {
-			if(c!=null) {
-				result+=c+"\n";
-			}
-		}
-		return result;
-	}
-	
-
-	public Competicion showCompetition(String nombre) {
-		Competicion c = null;
-		for(Competicion com:competiciones) {
-			if(com.getNombre().equals(nombre)) {
-				c=com;
-			}
-		}
-		return c;
-	}
 
 }
