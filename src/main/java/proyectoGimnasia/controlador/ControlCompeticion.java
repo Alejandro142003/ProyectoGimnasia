@@ -72,26 +72,19 @@ public class ControlCompeticion implements iControllerCompeticion{
 	}
 
 	public void controllerEditCompetition() {
-		Competicion c = null;
-		c = (Competicion) compCrud.findCompetition(Utils.leeString("Introduce el nombre de la que competicion que desea editar: "));
-		String descripcion = Utils.leeString("Introduce la nueva descripcion de la competicion: ");
-		LocalDate fechaInicio = LocalDate.now();
-		
-		if(compCrud.editCompetition(c)==true) {
-			Utils.print("Los datos se han actualizado correctamente.");
-		} else {
-			Utils.print("No se ha actualizado correctamente.");
-		}
+		compCrud.editCompetition();
 		
 		
 	}
 	
 	public void controllerDeleteCompetition() {
-		compCrud.deleteCompetition(compCrud.findCompetition("Introduce el nombre de la competicion: "));
+		
+		compCrud.deleteCompetition(compCrud.findCompetition(Utils.leeString("Introduce el nombre de la competicion: ")));
 	}
 	public void controllerShowCompetition() {
 		
 		String nombre=Utils.leeString("Introduce el nombre de la competicion que desea mostrar: ");
+		compCrud.findCompetition(nombre);
 		Utils.printObject(compCrud.findCompetition(nombre));
 	}
 	

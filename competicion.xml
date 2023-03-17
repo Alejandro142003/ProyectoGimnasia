@@ -1,8 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ProyectoGestionCompeticionesGimnasia>
-    <competiciones>
-        <descripcion>competicion profesional</descripcion>
-        <fechaInicio/>
-        <nombre>comp1</nombre>
-    </competiciones>
-</ProyectoGestionCompeticionesGimnasia>
+<ProyectoGestionCompeticionesGimnasia/>
