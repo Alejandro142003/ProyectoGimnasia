@@ -3,6 +3,7 @@ package proyectoGimnasia.controlador;
 
 import java.util.List;
 
+import proyectoGimnasia.cruds.PruebaCrud;
 import proyectoGimnasia.interfaces.iControllerPrueba;
 import proyectoGimnasia.interfaces.iGUIPrueba;
 import proyectoGimnasia.model.RepoPrueba;
@@ -20,7 +21,8 @@ public class ControlPrueba implements iControllerPrueba {
 	
 	  private iGUIPrueba guiPrueba = new PruebaView();
 	    private RepoPrueba repoPrueba = new RepoPrueba();
-
+	    private Prueba prueba = new Prueba();
+	    private PruebaCrud crud;
 	    @Override
 	    public void controlPruebaMenu(int op) {
 	        int option;
@@ -46,7 +48,7 @@ public class ControlPrueba implements iControllerPrueba {
 	                    controllerRemovePrueba();
 	                    break;
 	                case 6:
-	
+	               
 	                    break;
 	                case 7:
 	                    valid = true;
