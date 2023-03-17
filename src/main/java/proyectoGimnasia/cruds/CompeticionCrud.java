@@ -1,5 +1,6 @@
 package proyectoGimnasia.cruds;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -26,28 +27,36 @@ public class CompeticionCrud{
 		List<Competicion> comp = rc.getCompeticiones();
 		Competicion co=null;
 		for(Competicion c: comp) {
-			if(c.getNombre()==nombre) {
+			if(c.getNombre().equals(nombre)) {
 				co=c;
+				break;
+			}else {
+				Utils.print("No se ha encontrado la competicion.");
 			}
 		}
 		return co;
 		
 	}
 	
-	public boolean editCompetition(Competicion c) {
+	public void editCompetition() {
 		RepoCompeticiones rc = RepoCompeticiones.newInstance();
 		List<Competicion> comp = rc.getCompeticiones();
-		boolean valid=false;
-		for(Competicion co : comp) {
-			if(co.getNombre()==c.getNombre()) {
-				co.setDescripcion(c.getDescripcion());
-				co.setFechaInicio(c.getFechaInicio());
-				rc.setCompeticiones(comp);
-				rc.guardarXML(comp);
-				valid=true;
+		showAll();
+		if(comp.isEmpty()) {
+			Utils.print("No ha competiciones para editar.");
+		}else {
+			String nombre = Utils.leeString("Introduce el nombre de la competicion: ");
+			for(Competicion co : comp) {
+				if(co.getNombre()==co.getNombre()) {
+					String descripcion = Utils.leeString("Introduce la nueva descripcion");
+					co.setDescripcion(descripcion);
+					LocalDate fechaInicio = LocalDate.now();
+					co.setFechaInicio(fechaInicio);
+					rc.setCompeticiones(comp);
+					rc.guardarXML(comp);
+				}
 			}
 		}
-		return valid;
 
 		
 	}
@@ -59,6 +68,9 @@ public class CompeticionCrud{
 		if(result) {
 			rc.setCompeticiones(comp);
 			rc.guardarXML(comp);
+			Utils.print("Se ha eliminado correctamente.");
+		}else {
+			Utils.print("No se ha eliminado correctamente.");
 		}
 		return result;
 		
@@ -69,7 +81,6 @@ public class CompeticionCrud{
 		List<Competicion> comp = rc.getCompeticiones();
 		String result = "";
 		for(Competicion c: comp) {
-			
 			if(comp.isEmpty()) {
 					Utils.print("No hay competiciones registradas");
 			}else {
