@@ -1,21 +1,21 @@
 package proyectoGimnasia.controlador;
 
+import proyectoGimnasia.cruds.GimnastasCrud;
 import proyectoGimnasia.interfaces.iControllerGimnasta;
 import proyectoGimnasia.interfaces.iGUIGimnasta;
 import proyectoGimnasia.interfaces.iGUIGrupo;
 import proyectoGimnasia.interfaces.iRepoGimnasta;
 import proyectoGimnasia.vistas.GimnastaView;
 import proyectoGimnasia.vistas.GrupoView;
-import proyectoGimnasia.model.RepoGimnastas;
+import proyectoGimnasia.model.RepoGimnasta;
 import proyectoGimnasia.model.DTO.Gimnasta;
 import proyectoGimnasia.utils.Utils;
 
 public class ControlGimnasta implements iControllerGimnasta {
-	private iRepoGimnasta repoGim = new RepoGimnastas();
 	
 	private iGUIGimnasta guiGim = new GimnastaView();
 	private iGUIGrupo guiGru = new GrupoView();
-	RepoGimnastas RepoGimnstasGrupo = new RepoGimnastas();
+	GimnastasCrud gc= new GimnastasCrud();
 	
 	private ControlPrincipal parent;
 	public ControlGimnasta(ControlPrincipal parent) {
@@ -65,7 +65,7 @@ public class ControlGimnasta implements iControllerGimnasta {
 		String club = Utils.leeString("Introduce el club del Gimnasta: ");
 		int dorsal = Utils.leeEntero("Introduce el numero del dorsal: ");
 		Gimnasta Gimnasta = new Gimnasta(dni,nombre,correo,telefono,categoria,club,dorsal);
-		if(repoGim.addGymnast(Gimnasta)==true) {
+		if(gc.addGymnast(Gimnasta)==true) {
 			Utils.print("Se ha introducido correctamente el gimnasta.");
 		}else {
 			Utils.print("No se ha introducido el gimnasta.");
@@ -76,7 +76,7 @@ public class ControlGimnasta implements iControllerGimnasta {
 	public void controllerEditGymnast() {
 		cotrollerShowAllGymnast();
 		Utils.print("");
-		
+		gc.editGymnast();
 	}
 
 	@Override
@@ -91,7 +91,7 @@ public class ControlGimnasta implements iControllerGimnasta {
 		
 	}
 	public void cotrollerShowAllGymnast() {
-		String gimnastas = repoGim.showAllGymnasts();
+		String gimnastas = gc.showAllGymnasts();
 		Utils.printObject(gimnastas);
 	}
 }

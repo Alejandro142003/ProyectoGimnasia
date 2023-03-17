@@ -1,11 +1,11 @@
 package proyectoGimnasia.interfaces;
 
+import java.util.List;
+
 import proyectoGimnasia.model.DTO.Gimnasta;
 
 public interface iRepoGimnasta {
-	boolean addGymnast(Gimnasta gimnasta);
-	void editGymnast();
-	void deleteGymnast();
-	Gimnasta showGymnast(int dorsal);
-	String showAllGymnasts();
+	public List<Gimnasta> getGimnastas();
+	public void setGimnastas(List<Gimnasta> gimnastas);
+	public boolean guardarXML(List<Gimnasta> gimnastas);
 }
