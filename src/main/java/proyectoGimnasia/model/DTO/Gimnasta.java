@@ -4,7 +4,7 @@ public class Gimnasta extends Persona{
 	
 	private String categoria;
 	private String club;
-	private int dorsal;
+	private Integer dorsal;
 
 	public Gimnasta() {
 		super();
@@ -45,11 +45,12 @@ public class Gimnasta extends Persona{
 		this.dorsal = dorsal;
 	}
 
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + dorsal;
+		result = prime * result + ((dorsal == null) ? 0 : dorsal.hashCode());
 		return result;
 	}
 
@@ -62,7 +63,10 @@ public class Gimnasta extends Persona{
 		if (getClass() != obj.getClass())
 			return false;
 		Gimnasta other = (Gimnasta) obj;
-		if (dorsal != other.dorsal)
+		if (dorsal == null) {
+			if (other.dorsal != null)
+				return false;
+		} else if (!dorsal.equals(other.dorsal))
 			return false;
 		return true;
 	}

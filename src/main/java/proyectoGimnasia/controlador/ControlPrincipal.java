@@ -1,12 +1,13 @@
 package proyectoGimnasia.controlador;
 
 import proyectoGimnasia.interfaces.iGUI;
+import proyectoGimnasia.model.RepoCompeticiones;
 import proyectoGimnasia.utils.Utils;
 import proyectoGimnasia.vistas.MainView;
 
 public class ControlPrincipal<T> {
-	public ControlPrueba cp = new ControlPrueba(this);
-	public ControlCompticion cpp =new ControlCompticion(this);
+	public ControlPrueba cp = new ControlPrueba();
+	public ControlCompeticion cpp =new ControlCompeticion(this);
 	public ControlParticipacion<T> cpart= new ControlParticipacion(this);
 	public ControlGimnasta cGim= new ControlGimnasta(this);
 	public ControlGimnastaGrupo cGimGrup= new ControlGimnastaGrupo(this);
@@ -25,6 +26,7 @@ public class ControlPrincipal<T> {
 				cpp.controlCompetitionMenu(option);
 				break;
 			case 2:
+				cp.controlPruebaMenu(option);
 				//Falta implementar el controlador de gimnasta grupo cGimGrup.controlGimnastaGrupo();
 				break;
 			case 3:

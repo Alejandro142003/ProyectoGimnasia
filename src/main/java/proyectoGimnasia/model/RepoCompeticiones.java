@@ -1,33 +1,66 @@
 package proyectoGimnasia.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 import proyectoGimnasia.interfaces.iRepoCompeticion;
 import proyectoGimnasia.model.DTO.Competicion;
-
-public class RepoCompeticiones implements iRepoCompeticion{
-	private ArrayList<Competicion> competiciones = new ArrayList<Competicion>();
+import proyectoGimnasia.utils.XMLManager;
+@XmlRootElement(name="ProyectoGestionCompeticionesGimnasia")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class RepoCompeticiones implements iRepoCompeticion ,Serializable{
 	
-	public boolean addCompetition(Competicion competicion) {
-		boolean result=false;
-		if(!competiciones.contains(competicion)) {
-			competiciones.add(competicion);
-			result=true;
+	
+	@XmlTransient
+	private static final long serialVersionUID = 1L;
+	@XmlTransient
+	private static RepoCompeticiones _instance;
+	
+	
+	private List<Competicion> competiciones;
+	
+	
+	
+	
+	private RepoCompeticiones(boolean fake) {
+		RepoCompeticiones copia = XMLManager.readXML(new RepoCompeticiones(), "competicion.xml");
+		if(copia!=null) {
+			this.competiciones = copia.getCompeticiones();
 		}
-		return result;
+		if(this.competiciones==null) {
+			this.competiciones = new ArrayList<>();
+		}
+	}
+	
+	private RepoCompeticiones() {
+		this.competiciones = new ArrayList<>();
+	}
+	
+	public static RepoCompeticiones newInstance() {
+		if(_instance == null) _instance = new RepoCompeticiones();
+			return _instance;
+	}
+	
+	
+	public List<Competicion> getCompeticiones() {
+		return competiciones;
+	}
+
+
+	public void setCompeticiones(List<Competicion> competiciones) {
+		this.competiciones = competiciones;
+	}
+
+	public boolean guardarXML(List<Competicion> competiciones) {
+		return XMLManager.writeXML(this, "competicion.xml");
 	}
 
 	
-
-
-	public Competicion showCompetition(String nombre) {
-		Competicion c = null;
-		for(Competicion com:competiciones) {
-			if(com.getNombre().equals(nombre)) {
-				c=com;
-			}
-		}
-		return c;
-	}
 
 }

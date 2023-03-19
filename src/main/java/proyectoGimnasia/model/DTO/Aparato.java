@@ -6,4 +6,10 @@ public enum Aparato {
 	Cinta, 
 	Cuerda, 
 	ManosLibres;
+
+	Aparato getAparato(int aparatoPrueba) {
+		return null;
+	}
 }
+
+
