@@ -3,6 +3,10 @@ package proyectoGimnasia.utils;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import proyectoGimnasia.model.DTO.Aparato;
+import proyectoGimnasia.model.DTO.Categoria;
+import proyectoGimnasia.model.DTO.Tipo;
+
 public class Utils {
 	
 	/**
@@ -186,6 +190,69 @@ public class Utils {
 	    
 	    return num;
 	  }
+	
+	public static Aparato validAparato(String mensaje) {
+	  	Scanner sc = new Scanner (System.in);
+		Aparato result = null;
+		boolean valid = false;
+		do {
+			try {
+				System.out.print(mensaje);
+				String aparato = sc.nextLine().toLowerCase();
+				result = Enum.valueOf(Aparato.class, aparato);
+				valid = true;
+				
+			} catch (IllegalArgumentException e) {
+				System.out.println("Error, no has introducido un aparato correcto.");
+				sc.nextLine();
+				
+			}
+		} while (!valid);
+		
+		return result;
+  }
+	
+	public static Categoria validCategoria(String mensaje) {
+	  	Scanner sc = new Scanner (System.in);
+		Categoria result = null;
+		boolean valid = false;
+		do {
+			try {
+				System.out.print(mensaje);
+				String categoria = sc.nextLine().toLowerCase();
+				result = Enum.valueOf(Categoria.class, categoria);
+				valid = true;
+				
+			} catch (IllegalArgumentException e) {
+				System.out.println("Error, no has introducido una categoria correcta.");
+				sc.nextLine();
+				
+			}
+		} while (!valid);
+		
+		return result;
+  }
+	
+	public static Tipo validTipo(String mensaje) {
+	  	Scanner sc = new Scanner (System.in);
+		Tipo result = null;
+		boolean valid = false;
+		do {
+			try {
+				System.out.print(mensaje);
+				String tipo = sc.nextLine().toLowerCase();
+				result = Enum.valueOf(Tipo.class, tipo);
+				valid = true;
+				
+			} catch (IllegalArgumentException e) {
+				System.out.println("Error, no has introducido una talla correcta.");
+				sc.nextLine();
+				
+			}
+		} while (!valid);
+		
+		return result;
+  }
 	
 	
 	
