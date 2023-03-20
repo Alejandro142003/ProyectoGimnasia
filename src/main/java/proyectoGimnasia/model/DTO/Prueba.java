@@ -1,23 +1,28 @@
 package proyectoGimnasia.model.DTO;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Prueba {
-	private String tipo;
+public class Prueba implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Tipo tipo;
 	private Categoria categoria;
 	private Aparato aparato;
 	private ArrayList<Participacion> participaciones;
 
 	
 	public Prueba() {
-	    this.tipo = "";
+	    this.tipo = null;
 	    this.categoria = null;
 	    this.aparato = null;
 	    this.participaciones = new ArrayList<Participacion>();
 	}
 
-	public Prueba(String tipo, Categoria categoria, Aparato aparato) {
+	public Prueba(Tipo tipo, Categoria categoria, Aparato aparato) {
 	    super();
 	    this.tipo = tipo;
 	    this.categoria = categoria;
@@ -28,11 +33,11 @@ public class Prueba {
 
 
 
-	public String getTipo() {
+	public Tipo getTipo() {
 		return tipo;
 	}
 	
-	public void setTipo(String tipo) {
+	public void setTipo(Tipo tipo) {
 		this.tipo = tipo;
 	}
 	
