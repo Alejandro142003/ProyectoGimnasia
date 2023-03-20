@@ -1,6 +1,7 @@
 package proyectoGimnasia.cruds;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 
@@ -50,7 +51,7 @@ public class CompeticionCrud{
 				if(co.getNombre()==co.getNombre()) {
 					String descripcion = Utils.leeString("Introduce la nueva descripcion: ");
 					co.setDescripcion(descripcion);
-					LocalDate fechaInicio = LocalDate.now();
+					Date fechaInicio = Utils.validFecha("Introduce la nueva fecha de inicio: ");
 					co.setFechaInicio(fechaInicio);
 					rc.setCompeticiones(comp);
 					rc.guardarXML(comp);
