@@ -249,7 +249,7 @@ public class Utils {
 				valid = true;
 				
 			} catch (IllegalArgumentException e) {
-				System.out.println("Error, no has introducido una talla correcta.");
+				System.out.println("Error, no has introducido un valor válido");
 				sc.nextLine();
 				
 			}

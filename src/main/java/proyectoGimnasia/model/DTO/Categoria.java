@@ -1,12 +1,12 @@
 package proyectoGimnasia.model.DTO;
 
 public enum Categoria {
-	Prebenjamin(5,7),
-	Benjamin(8,9),
-	Alevin(10,11),
-	Infantil(12,13),
-	Junior(14,15),
-	Senior(16,25);
+	prebenjamin(5,7),
+	benjamin(8,9),
+	alevin(10,11),
+	infantil(12,13),
+	junior(14,15),
+	senior(16,25);
 	
 	private final int minAge;
 	private final int maxAge;

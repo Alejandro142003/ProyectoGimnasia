@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ProyectoGestionCompeticionesGimnasia/>
+<ProyectoGestionCompeticionesGimnasia>
+    <competiciones>
+        <descripcion>fehe</descripcion>
+        <fechaInicio>2022-02-02T00:00:00+01:00</fechaInicio>
+        <nombre>cp</nombre>
+        <pruebas>
+            <aparato>cuerda</aparato>
+            <categoria>senior</categoria>
+            <tipo>grupo</tipo>
+        </pruebas>
+    </competiciones>
+</ProyectoGestionCompeticionesGimnasia>

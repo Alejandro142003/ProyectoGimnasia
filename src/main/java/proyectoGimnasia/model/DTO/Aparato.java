@@ -1,11 +1,11 @@
 package proyectoGimnasia.model.DTO;
 
 public enum Aparato {
-	Mazas, 
-	Aro, 
-	Cinta, 
-	Cuerda, 
-	ManosLibres;
+	mazas, 
+	aro, 
+	cinta, 
+	cuerda, 
+	manosLibres;
 
 	Aparato getAparato(int aparatoPrueba) {
 		return null;

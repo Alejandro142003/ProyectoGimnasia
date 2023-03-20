@@ -11,10 +11,11 @@ public class PruebaView implements iGUIPrueba{
 		print("|  {1} Nombre de la competición               |");
 		print("|  {2} Añadir prueba                          |");
 		print("|  {3} Editar prueba                          |");
-		print("|  {4} Mostrar prueba                         |");
-		print("|  {5} Eliminar prueba                        |");
-		print("|  {6} Participantes                          |");
-		print("|  {7} Salir                                  |");
+		print("|  {4} Mostrar todas las pruebas              |");
+		print("|  {5} Mostrar prueba individual              |");
+		print("|  {6} Eliminar prueba                        |");
+		print("|  {7} Participantes                          |");
+		print("|  {8} Salir                                  |");
 		print("|                                             |");
 		print(" --------------------------------------------- ");
 		
@@ -27,7 +28,7 @@ public class PruebaView implements iGUIPrueba{
 		print("|                    |                        |");
 		print(" --------------------------------------------- ");
 		print("|                    |                        |");
-		print("|  {1} Invividual    |        {2} Grupo       |");
+		print("|      Invividual    |            Grupo       |");
 		print("|                    |                        |");
 		print(" --------------------------------------------- ");
 	}
@@ -38,15 +39,15 @@ public class PruebaView implements iGUIPrueba{
 		print("|                    |                        |");
 		print(" --------------------------------------------- ");
 		print("|                    |                        |");
-		print("|  {1} Prebenjamin   |     {2} Benjamin       |");
+		print("|      Prebenjamin   |         Benjamin       |");
 		print("|                    |                        |");
 		print(" --------------------------------------------- ");
 		print("|                    |                        |");
-		print("|  {3} Alevin        |     {4} Infantil       |");
+		print("|      Alevin        |         Infantil       |");
 		print("|                    |                        |");
 		print(" --------------------------------------------- ");
 		print("|                    |                        |");
-		print("|  {5} Junior        |     {6} Senior         |");
+		print("|      Junior        |         Senior         |");
 		print("|                    |                        |");
 		print(" --------------------------------------------- ");
 	}
@@ -57,16 +58,16 @@ public class PruebaView implements iGUIPrueba{
 		print("|                    |                        |");
 		print(" --------------------------------------------- ");
 		print("|                    |                        |");
-		print("|  {1} Mazas         |     {2} Aro            |");
+		print("|      Mazas         |         Aro            |");
 		print("|                    |                        |");
 		print(" --------------------|----------------------- ");
 		print("|                    |                        |");
-		print("|  {3} Cinta         |     {4} Cuerda         |");
+		print("|      Cinta         |         Cuerda         |");
 		print("|                    |                        |");
 		print(" --------------------------------------------- ");
 		print("|                                             |");
-		print("|           {5} ManosLibres                   |");
-		print("|                                            |");
+		print("|              ManosLibres                    |");
+		print("|                                             |");
 		print(" --------------------------------------------- ");
 	}
 	public static void print (String text) {
