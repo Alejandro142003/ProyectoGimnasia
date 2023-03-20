@@ -21,6 +21,8 @@ public class GimnastaView implements iGUIGimnasta{
 		
 	}
 	
+	//método
+	
 	public static void print (String text) {
 		System.out.println(text);
 	}
