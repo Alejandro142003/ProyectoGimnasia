@@ -35,7 +35,6 @@ public class ControlCompeticion implements iControllerCompeticion{
 					break;
 				case 2:
 					controllerEditCompetition();
-					this.parent.cp.controlPruebaMenu(option);
 					break;
 				case 3:
 					controllerShowCompetition();
@@ -47,6 +46,9 @@ public class ControlCompeticion implements iControllerCompeticion{
 					controllerShowAllCompetitions();
 					break;
 				case 6:
+					this.parent.cp.controlPruebaMenu(option);
+					break;
+				case 7:
 					valid=true;
 					Utils.print("Has salido correctamente del menu competicion.");
 					break;

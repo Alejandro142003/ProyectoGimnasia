@@ -1,7 +1,11 @@
 package proyectoGimnasia.model.DTO;
 
-public class Gimnasta extends Persona{
+import java.io.Serializable;
+
+public class Gimnasta extends Persona implements Serializable{
 	
+	
+	private static final long serialVersionUID = 1L;
 	private String categoria;
 	private String club;
 	private Integer dorsal;

@@ -26,7 +26,7 @@ public class ControlPrincipal<T> {
 				cpp.controlCompetitionMenu(option);
 				break;
 			case 2:
-				cp.controlPruebaMenu(option);
+				cGim.controlGymnastMenu(option);
 				//Falta implementar el controlador de gimnasta grupo cGimGrup.controlGimnastaGrupo();
 				break;
 			case 3:

@@ -25,12 +25,10 @@ public class RepoGimnasta implements iRepoGimnasta ,Serializable{
 	
 	private List<Gimnasta> gimnastas;
 	
+	
+	
+	
 	private RepoGimnasta(boolean fake) {
-		
-	}
-	
-	
-	private RepoGimnasta() {
 		RepoGimnasta copia = XMLManager.readXML(new RepoGimnasta(true), "gimnasta.xml");
 		if(copia!=null) {
 			this.gimnastas = copia.getGimnastas();
@@ -38,6 +36,10 @@ public class RepoGimnasta implements iRepoGimnasta ,Serializable{
 		if(this.gimnastas==null) {
 			this.gimnastas = new ArrayList<>();
 		}
+	}
+	
+	private RepoGimnasta() {
+		this.gimnastas= new ArrayList<>();
 	}
 	
 	public static RepoGimnasta newInstance() {

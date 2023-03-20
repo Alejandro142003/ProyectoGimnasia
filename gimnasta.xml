@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProyectoGestionCompeticionesGimnasia>
+    <gimnastas>
+        <correo>a@gmail.com</correo>
+        <dni>20953342C</dni>
+        <nombre>Xela</nombre>
+        <telefono>694451972</telefono>
+        <categoria>Senior</categoria>
+        <club>club2</club>
+        <dorsal>10</dorsal>
+    </gimnastas>
+</ProyectoGestionCompeticionesGimnasia>

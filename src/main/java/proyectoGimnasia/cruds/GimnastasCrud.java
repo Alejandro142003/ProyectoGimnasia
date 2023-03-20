@@ -62,6 +62,7 @@ public class GimnastasCrud{
 		for(Gimnasta gimnasta:gim) {
 			if(gimnasta.getDorsal() == dorsal) {
 				g=gimnasta;
+				break;
 			} else {
 				Utils.print("No existe ningun gimnasta con el siguiente dorsal "+dorsal);
 			}
