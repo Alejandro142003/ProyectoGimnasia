@@ -3,6 +3,7 @@ package proyectoGimnasia.model.DTO;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -11,7 +12,7 @@ public class Competicion implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private String nombre;
 	private String descripcion;
-	private LocalDate fechaInicio;
+	private Date fechaInicio;
 	private List<Prueba> pruebas;
 	
 	
@@ -22,7 +23,7 @@ public class Competicion implements Serializable{
 		this.fechaInicio=null;
 		
 	}
-	public Competicion(String nombre, String descripcion, LocalDate fechaInicio) {
+	public Competicion(String nombre, String descripcion, Date fechaInicio) {
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.fechaInicio = fechaInicio;
@@ -40,10 +41,11 @@ public class Competicion implements Serializable{
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public LocalDate getFechaInicio() {
+	
+	public Date getFechaInicio() {
 		return fechaInicio;
 	}
-	public void setFechaInicio(LocalDate fechaInicio) {
+	public void setFechaInicio(Date fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 	public List<Prueba> getPruebas() {
