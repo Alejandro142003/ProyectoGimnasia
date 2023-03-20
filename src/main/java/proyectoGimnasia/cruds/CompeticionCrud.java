@@ -48,7 +48,7 @@ public class CompeticionCrud{
 			String nombre = Utils.leeString("Introduce el nombre de la competicion: ");
 			for(Competicion co : comp) {
 				if(co.getNombre()==co.getNombre()) {
-					String descripcion = Utils.leeString("Introduce la nueva descripcion");
+					String descripcion = Utils.leeString("Introduce la nueva descripcion: ");
 					co.setDescripcion(descripcion);
 					LocalDate fechaInicio = LocalDate.now();
 					co.setFechaInicio(fechaInicio);

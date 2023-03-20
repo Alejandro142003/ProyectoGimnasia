@@ -1,6 +1,7 @@
 package proyectoGimnasia.controlador;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import proyectoGimnasia.cruds.CompeticionCrud;
 import proyectoGimnasia.interfaces.iControllerCompeticion;
@@ -64,7 +65,7 @@ public class ControlCompeticion implements iControllerCompeticion{
 	public void controllerAddCompetition() {
 		String nombre=Utils.leeString("Introduce el nombre de la competicion: ");
 		String descripcion=Utils.leeString("Introduce la descripcion de la competicion: ");
-		LocalDate fechaInicio= LocalDate.now();
+		Date fechaInicio=Utils.validFecha("Introduce la fecha de incio de la competicion: ");
 		Competicion nCompeticion = new Competicion(nombre, descripcion, fechaInicio);
 		if(compCrud.addCompetition(nCompeticion)==true) {
 			Utils.print("Se ha introducido correctamente la competicion.");
