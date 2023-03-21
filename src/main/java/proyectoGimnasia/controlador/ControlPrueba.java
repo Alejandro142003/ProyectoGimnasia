@@ -24,6 +24,10 @@ public class ControlPrueba implements iControllerPrueba {
 	    private Prueba prueba = new Prueba();
 	    private PruebaCrud crud = new PruebaCrud();
 	    List<Prueba> pruebas = new ArrayList<>();
+	    private ControlPrincipal parent;
+	    public ControlPrueba(ControlPrincipal parent) {
+			this.parent = parent;
+		}
 	    @Override
 	    public void controlPruebaMenu(int op) {
 	        int option;
@@ -52,7 +56,7 @@ public class ControlPrueba implements iControllerPrueba {
 	                	controllerRemovePrueba();
 	                    break;
 	                case 7:
-	                   
+	                	this.parent.cpart.controlPartitionMenu(option);
 	                    break;
 	                case 8:
 	                    valid = true;
