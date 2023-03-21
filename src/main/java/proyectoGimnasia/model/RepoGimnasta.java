@@ -37,7 +37,7 @@ public class RepoGimnasta implements iRepoGimnasta ,Serializable{
 	}
 	
 	public static RepoGimnasta newInstance() {
-		if(_instance == null) _instance = new RepoGimnasta();
+		if(_instance == null) _instance = new RepoGimnasta(true);
 			return _instance;
 	}
 		

@@ -2,6 +2,7 @@ package proyectoGimnasia.controlador;
 
 import proyectoGimnasia.interfaces.iGUI;
 import proyectoGimnasia.model.RepoCompeticiones;
+import proyectoGimnasia.model.RepoGimnasta;
 import proyectoGimnasia.utils.Utils;
 import proyectoGimnasia.vistas.MainView;
 
@@ -17,6 +18,7 @@ public class ControlPrincipal<T> {
 	
 	public void controllerMainMenu() {
 		RepoCompeticiones rp = RepoCompeticiones.newInstance();
+		RepoGimnasta rg = RepoGimnasta.newInstance();
 		boolean valid = false;
 		int option;
 		do {
