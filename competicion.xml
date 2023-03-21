@@ -1,18 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ProyectoGestionCompeticionesGimnasia>
-    <competiciones>
-        <descripcion>semiprofesional</descripcion>
-        <fechaInicio>2000-04-10T00:00:00+02:00</fechaInicio>
-        <nombre>cp</nombre>
-        <pruebas>
-            <aparato>mazas</aparato>
-            <categoria>prebenjamin</categoria>
-            <tipo>individual</tipo>
-        </pruebas>
-        <pruebas>
-            <aparato>aro</aparato>
-            <categoria>benjamin</categoria>
-            <tipo>grupo</tipo>
-        </pruebas>
-    </competiciones>
-</ProyectoGestionCompeticionesGimnasia>
+<ProyectoGestionCompeticionesGimnasia/>

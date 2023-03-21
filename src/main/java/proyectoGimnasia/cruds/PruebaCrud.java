@@ -71,22 +71,22 @@ public class PruebaCrud {
 	}
   
 
-	public static void mostrarPrueba(String nombreComp, Prueba p) {
+	public Prueba mostrarPrueba(String nombreComp, Prueba p) {
 	    RepoCompeticiones rc = RepoCompeticiones.newInstance();
 	    List<Competicion> comps = rc.getCompeticiones();
+	    Prueba p1 = null;
 	    for (Competicion c : comps) {
 	        if (c.getNombre().equalsIgnoreCase(nombreComp)) {
+	        	List<Prueba> pruebas = c.getPruebas();  
 	            if (c.getPruebas().contains(p)) {
-	               Utils.print("Tipo: "+p.getTipo());
-	               Utils.print("Categoria: "+p.getCategoria());
-	               Utils.print("Aparato: "+p.getAparato());
-	     
+	               p1=p;
 	            } else {
 	            	Utils.print("La prueba no se encontró en la competición.");
 	            }
-	        }
-	      Utils.print("La competición no se encontró.");
+	        }    
+	
 	    }
+	    return p1;
 	}
 
 	
