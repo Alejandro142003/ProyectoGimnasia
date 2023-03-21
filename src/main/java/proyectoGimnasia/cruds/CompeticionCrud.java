@@ -1,7 +1,7 @@
 package proyectoGimnasia.cruds;
 
-import java.time.LocalDate;
-import java.util.Date;
+
+
 import java.util.List;
 
 
@@ -31,33 +31,29 @@ public class CompeticionCrud{
 			if(c.getNombre().equals(nombre)) {
 				co=c;
 				break;
-			}else {
-				Utils.print("No se ha encontrado la competicion.");
 			}
 		}
 		return co;
 		
 	}
 	
-	public void editCompetition() {
+	public boolean editCompetition(Competicion c) {
+		boolean valid = false;
 		RepoCompeticiones rc = RepoCompeticiones.newInstance();
 		List<Competicion> comp = rc.getCompeticiones();
 		showAll();
 		if(comp.isEmpty()) {
 			Utils.print("No ha competiciones para editar.");
 		}else {
-			String nombre = Utils.leeString("Introduce el nombre de la competicion: ");
 			for(Competicion co : comp) {
-				if(co.getNombre()==co.getNombre()) {
-					String descripcion = Utils.leeString("Introduce la nueva descripcion: ");
-					co.setDescripcion(descripcion);
-					Date fechaInicio = Utils.validFecha("Introduce la nueva fecha de inicio: ");
-					co.setFechaInicio(fechaInicio);
+				if(co.equals(c)) {
 					rc.setCompeticiones(comp);
 					rc.guardarXML(comp);
+					valid = true;
 				}
 			}
 		}
+		return valid;
 
 		
 	}
