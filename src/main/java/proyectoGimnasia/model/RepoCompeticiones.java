@@ -30,9 +30,7 @@ public class RepoCompeticiones implements iRepoCompeticion ,Serializable{
 	
 	private RepoCompeticiones(boolean fake) {
 		RepoCompeticiones copia = XMLManager.readXML(new RepoCompeticiones(), "competicion.xml");
-		System.out.println("CREANDO REPO");
 		if(copia!=null) {
-			System.out.println("REPO ENCONTRADO");
 			this.competiciones = copia.getCompeticiones();
 		}
 		if(this.competiciones==null) {
