@@ -75,14 +75,4 @@ public class RepoParticipacion<T> implements iRepoParticipacion<T> {
 		return p;
 		
 	}
-	
-	public List<Participacion<T>> getParticipaciones() {
-		Participacion<T> p = null;
-		return (List<Participacion<T>>) p;
-	}
-	
-	public void setParticipaciones(List<Participacion<T>> participaciones) {
-		this.participaciones = (ArrayList<Participacion<T>>) participaciones;
-	}
-
 }
