@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public class GimnastasCrud{
-    
+	
 	public boolean addGymnast(Gimnasta g) {
 		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Gimnasta> gim = rg.getGimnastas();
@@ -21,37 +21,28 @@ public class GimnastasCrud{
 		return result;
 	}
 
-	public void editGymnast() {
+	public boolean editGymnast(Gimnasta g) {
+		boolean result = true;
 		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Gimnasta> gim = rg.getGimnastas();
 		showAllGymnasts();
 		if (gim.isEmpty()) {
 			Utils.print("No hay gimnastas para editar.");
 		}else {
-			String dni = Utils.leeString("Introduce el dni del gimnasta que desea modificar: ");
-			for (Gimnasta g:gim) {
-				if (g.getDni() == dni) {
-					String nombre = Utils.leeString("Introduce el nombre: ");
-					g.setNombre(nombre);
-					String correo = Utils.leeString("Introduce un correo electrónico: ");
-					g.setCorreo(correo);
-					int telefono = Utils.leeEntero("Introduce un numero de telefono; ");
-					g.setTelefono(telefono);
-					String categoria = Utils.leeString("Introduce la categoria del Gimnasta: ");
-					g.setCategoria(categoria);
-					String club = Utils.leeString("Introduce el club del Gimnasta: ");
-					g.setClub(club);
+			for (Gimnasta gimnasta : gim) {
+				if (gimnasta.equals(g)) {
 					rg.setGimnastas(gim);
 					rg.guardarXML(gim);
+					result = true;
 				}
 			}
 		}
+		return result;
 	}
 
-	public boolean deleteGymnast(int dorsal) {
+	public boolean deleteGymnast(Gimnasta g) {
 		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Gimnasta> gim = rg.getGimnastas();
-		Gimnasta g = new Gimnasta();
 		boolean result=gim.remove(g);
 		if (result) {
 			rg.setGimnastas(gim);
@@ -60,6 +51,19 @@ public class GimnastasCrud{
 		return result;
 	}
 
+	public Gimnasta findGymnast(String dni) {
+		RepoGimnasta rg = RepoGimnasta.newInstance();
+		List<Gimnasta> gim = rg.getGimnastas();
+		Gimnasta gimnasta = null;
+		for(Gimnasta g : gim) {
+			if(g.getDni().equals(dni)) {
+				gimnasta = g;
+				break;
+			}
+		}
+		return gimnasta;
+	}
+	
 	public Gimnasta showGymnast(String dni) {
 		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Gimnasta> gim = rg.getGimnastas();
@@ -74,7 +78,8 @@ public class GimnastasCrud{
 		}
 		return g;
 	}
-
+	
+	
 	public String showAllGymnasts() {
 		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Gimnasta> gim = rg.getGimnastas();

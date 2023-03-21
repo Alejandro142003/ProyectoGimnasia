@@ -1,11 +1,14 @@
 package proyectoGimnasia.controlador;
 
+import java.util.Date;
+
 import proyectoGimnasia.cruds.GimnastasCrud;
 import proyectoGimnasia.interfaces.iControllerGimnasta;
 import proyectoGimnasia.interfaces.iGUIGimnasta;
 import proyectoGimnasia.interfaces.iGUIGrupo;
 import proyectoGimnasia.vistas.GimnastaView;
 import proyectoGimnasia.vistas.GrupoView;
+import proyectoGimnasia.model.DTO.Competicion;
 import proyectoGimnasia.model.DTO.Gimnasta;
 import proyectoGimnasia.utils.Utils;
 
@@ -28,6 +31,7 @@ public class ControlGimnasta implements iControllerGimnasta {
 		do {
 			guiGim.showGymnastMenu();
 			opt=Utils.leeEntero("Elije una opción: ");
+			Utils.print("");
 			switch(opt) {
 				case 1:
 					controllerAddGymnast();
@@ -40,9 +44,18 @@ public class ControlGimnasta implements iControllerGimnasta {
 				case 3:
 					controllerShowGymnast();
 					break;
-					
+
 				case 4:
+					controllerShowAllGymnast();
+					break;
+					
+				case 5:
 					controllerDeleteGymnast();
+					break;
+					
+				case 6:
+					Utils.print("");
+					salir = true;
 					break;
 					
 				default:
@@ -61,7 +74,8 @@ public class ControlGimnasta implements iControllerGimnasta {
 		int telefono = Utils.leeEntero("Introduce un numero de telefono; ");
 		String categoria = Utils.leeString("Introduce la categoria del Gimnasta: ");
 		String club = Utils.leeString("Introduce el club del Gimnasta: ");
-		Gimnasta Gimnasta = new Gimnasta(dni,nombre,correo,telefono,categoria,club);
+		int edad = Utils.leeEntero("Introduce la edad del Gimnasta: ");
+		Gimnasta Gimnasta = new Gimnasta(dni,nombre,correo,telefono,categoria,club,edad);
 		if(gc.addGymnast(Gimnasta)==true) {
 			Utils.print("Se ha introducido correctamente el gimnasta.");
 		}else {
@@ -71,23 +85,57 @@ public class ControlGimnasta implements iControllerGimnasta {
 
 	@Override
 	public void controllerEditGymnast() {
-		cotrollerShowAllGymnast();
+		controllerShowAllGymnast();
 		Utils.print("");
-		gc.editGymnast();
+		Gimnasta g = null;
+		g = (Gimnasta) gc.findGymnast(Utils.leeString("Introduce el nombre de la competicion: "));
+		String nombre = Utils.leeString("Introduce el nuevo nombre: ");
+		g.setNombre(nombre);
+		String correo = Utils.leeString("Introduce el nuevo correo: ");
+		g.setCorreo(correo);
+		int telefono = Utils.leeEntero("Introduce el nuevo telefono: ");
+		g.setTelefono(telefono);
+		String categoria = Utils.leeString("Introduce la nueva categoria: ");
+		g.setCategoria(categoria);
+		String club = Utils.leeString("Introduce el nuevo club: ");
+		g.setClub(club);
+		int edad = Utils.leeEntero("Introduce la edad del partcipante: ");
+		g.setEdad(edad);
+		if(gc.editGymnast(g)) {
+			Utils.print("Se ha actualizado correctamente.");
+			Utils.print("");
+		}else {
+			Utils.print("No se ha actualizado la competicion.");
+			Utils.print("");
+		} 
 	}
 
 	@Override
 	public void controllerShowGymnast() {
-		String dni=Utils.leeString("Introduce el dni del gimnasta que desea mostrar: ");
-		gc.showGymnast(dni);
-	}
+		String dni = Utils.leeString("Introduce el dni del gimnasta que desea mostrar: ");
+		gc.findGymnast(dni);
+		if (gc.findGymnast(dni) == null) {
+			Utils.print("El dni que ha introducido no existe.");
+		} else {
+			Utils.printObject(gc.findGymnast(dni));
+			Utils.print("");
+			}
+		}
 
 	@Override
 	public void controllerDeleteGymnast() {
-		controllerShowGymnast();
-	
+		controllerShowAllGymnast();
+		String dni = Utils.leeString("Introduce el dni del gimnasta que desea eliminar: ");
+		if (gc.deleteGymnast(gc.findGymnast(dni))) {
+			Utils.print("Se ha eliminado correctamente.");
+			Utils.print("");
+		} else {
+			Utils.print("No se ha podido eliminar el gimnasta");
+			Utils.print("");
+		}
 	}
-	public void cotrollerShowAllGymnast() {
+	
+	public void controllerShowAllGymnast() {
 		String gimnastas = gc.showAllGymnasts();
 		Utils.printObject(gimnastas);
 	}

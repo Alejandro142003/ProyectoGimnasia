@@ -12,9 +12,9 @@ public class GimnastaView implements iGUIGimnasta{
 		print("|                                        |");
 		print("|  {1} Añadir gimnasta                   |");
 		print("|  {2} Editar gimnasta                   |");
-		print("|  {3} Mostrar gimnastas/grupos          |");
-		print("|  {4} Eliminar gimansta                 |");
-		print("|  {5} Grupo                             |");
+		print("|  {3} Mostrar gimnasta                  |");
+		print("|  {4} Mostrar todos los gimnastas       |");
+		print("|  {5} Eliminar gimansta                 |");
 		print("|  {6} Salir                             |");
 		print("|                                        |");
 		print("+----------------------------------------+");
