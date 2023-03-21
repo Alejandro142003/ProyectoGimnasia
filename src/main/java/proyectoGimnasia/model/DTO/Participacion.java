@@ -1,10 +1,15 @@
 package proyectoGimnasia.model.DTO;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.Calendar;
 
-public class Participacion<T> {
-    private T tipo;
+public class Participacion<T> implements Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private T tipo;
     private Time hora;
     private double puntuacion;
     private Integer dorsal;//Para indicar dorsal
