@@ -1,14 +1,12 @@
 package proyectoGimnasia.cruds;
 
 import proyectoGimnasia.model.RepoGimnasta;
-import proyectoGimnasia.model.DTO.Competicion;
 import proyectoGimnasia.model.DTO.Gimnasta;
 import proyectoGimnasia.utils.Utils;
 
-import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-import proyectoGimnasia.interfaces.iRepoGimnasta;
 
 public class GimnastasCrud{
     
@@ -21,7 +19,6 @@ public class GimnastasCrud{
 			rg.guardarXML(gim);
 		}
 		return result;
-
 	}
 
 	public void editGymnast() {
@@ -31,9 +28,9 @@ public class GimnastasCrud{
 		if (gim.isEmpty()) {
 			Utils.print("No hay gimnastas para editar.");
 		}else {
-			int dorsal = Utils.leeEntero("Introduce el dorsal del gimnasta que desea modificar: ");
+			String dni = Utils.leeString("Introduce el dni del gimnasta que desea modificar: ");
 			for (Gimnasta g:gim) {
-				if (g.getDorsal() == dorsal) {
+				if (g.getDni() == dni) {
 					String nombre = Utils.leeString("Introduce el nombre: ");
 					g.setNombre(nombre);
 					String correo = Utils.leeString("Introduce un correo electrónico: ");
@@ -51,20 +48,28 @@ public class GimnastasCrud{
 		}
 	}
 
-	public void deleteGymnast() {
-		showAllGymnasts();
-	}
-
-	public Gimnasta showGymnast(int dorsal) {
+	public boolean deleteGymnast(int dorsal) {
 		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Gimnasta> gim = rg.getGimnastas();
-		Gimnasta g = null;
-		for(Gimnasta gimnasta:gim) {
-			if(gimnasta.getDorsal() == dorsal) {
-				g=gimnasta;
-				break;
+		Gimnasta g = new Gimnasta();
+		boolean result=gim.remove(g);
+		if (result) {
+			rg.setGimnastas(gim);
+			rg.guardarXML(gim);
+		}
+		return result;
+	}
+
+	public Gimnasta showGymnast(String dni) {
+		RepoGimnasta rg = RepoGimnasta.newInstance();
+		List<Gimnasta> gim = rg.getGimnastas();
+		Iterator<Gimnasta> it = gim.iterator();
+		Gimnasta g = it.next();
+		while(it.hasNext()) {
+			if(g.getDni() == dni) {
+				g.toString();
 			} else {
-				Utils.print("No existe ningun gimnasta con el siguiente dorsal "+dorsal);
+				Utils.print("No existe ningun gimnasta con el siguiente dni "+dni);
 			}
 		}
 		return g;
@@ -76,7 +81,7 @@ public class GimnastasCrud{
 		String result ="";
 		for (Gimnasta gimnasta:gim) {
 			if (gim.isEmpty()) {
-				Utils.print("No existe ningún gimnasta para mostrar");//Quizas haya que cambiarlo por return+="";
+				Utils.print("No existe ningún gimnasta para mostrar");
 			} else {
 				if (gimnasta !=null ) {
 					result+=gimnasta+"\n";
