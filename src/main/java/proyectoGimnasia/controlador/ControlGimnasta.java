@@ -4,10 +4,8 @@ import proyectoGimnasia.cruds.GimnastasCrud;
 import proyectoGimnasia.interfaces.iControllerGimnasta;
 import proyectoGimnasia.interfaces.iGUIGimnasta;
 import proyectoGimnasia.interfaces.iGUIGrupo;
-import proyectoGimnasia.interfaces.iRepoGimnasta;
 import proyectoGimnasia.vistas.GimnastaView;
 import proyectoGimnasia.vistas.GrupoView;
-import proyectoGimnasia.model.RepoGimnasta;
 import proyectoGimnasia.model.DTO.Gimnasta;
 import proyectoGimnasia.utils.Utils;
 
@@ -63,8 +61,7 @@ public class ControlGimnasta implements iControllerGimnasta {
 		int telefono = Utils.leeEntero("Introduce un numero de telefono; ");
 		String categoria = Utils.leeString("Introduce la categoria del Gimnasta: ");
 		String club = Utils.leeString("Introduce el club del Gimnasta: ");
-		int dorsal = Utils.leeEntero("Introduce el numero del dorsal: ");
-		Gimnasta Gimnasta = new Gimnasta(dni,nombre,correo,telefono,categoria,club,dorsal);
+		Gimnasta Gimnasta = new Gimnasta(dni,nombre,correo,telefono,categoria,club);
 		if(gc.addGymnast(Gimnasta)==true) {
 			Utils.print("Se ha introducido correctamente el gimnasta.");
 		}else {
@@ -87,8 +84,8 @@ public class ControlGimnasta implements iControllerGimnasta {
 
 	@Override
 	public void controllerDeleteGymnast() {
-		// TODO Auto-generated method stub
-		
+		controllerShowGymnast();
+	
 	}
 	public void cotrollerShowAllGymnast() {
 		String gimnastas = gc.showAllGymnasts();

@@ -1,14 +1,11 @@
 package proyectoGimnasia.cruds;
 
 import proyectoGimnasia.model.RepoGimnasta;
-import proyectoGimnasia.model.DTO.Competicion;
 import proyectoGimnasia.model.DTO.Gimnasta;
 import proyectoGimnasia.utils.Utils;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import proyectoGimnasia.interfaces.iRepoGimnasta;
 
 public class GimnastasCrud{
     
@@ -21,7 +18,6 @@ public class GimnastasCrud{
 			rg.guardarXML(gim);
 		}
 		return result;
-
 	}
 
 	public void editGymnast() {
@@ -31,9 +27,9 @@ public class GimnastasCrud{
 		if (gim.isEmpty()) {
 			Utils.print("No hay gimnastas para editar.");
 		}else {
-			int dorsal = Utils.leeEntero("Introduce el dorsal del gimnasta que desea modificar: ");
+			String dni = Utils.leeString("Introduce el dni del gimnasta que desea modificar: ");
 			for (Gimnasta g:gim) {
-				if (g.getDorsal() == dorsal) {
+				if (g.getDni() == dni) {
 					String nombre = Utils.leeString("Introduce el nombre: ");
 					g.setNombre(nombre);
 					String correo = Utils.leeString("Introduce un correo electrónico: ");
@@ -51,20 +47,29 @@ public class GimnastasCrud{
 		}
 	}
 
-	public void deleteGymnast() {
-		showAllGymnasts();
+	public boolean deleteGymnast(int dorsal) {
+		RepoGimnasta rg = RepoGimnasta.newInstance();
+		List<Gimnasta> gim = rg.getGimnastas();
+		Gimnasta g = new Gimnasta();
+		boolean result=gim.remove(g);
+		if (result) {
+			rg.setGimnastas(gim);
+			rg.guardarXML(gim);
+		}
+		return result;
 	}
 
-	public Gimnasta showGymnast(int dorsal) {
+	public Gimnasta showGymnast(String dni) {
 		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Gimnasta> gim = rg.getGimnastas();
 		Gimnasta g = null;
 		for(Gimnasta gimnasta:gim) {
-			if(gimnasta.getDorsal() == dorsal) {
-				g=gimnasta;
+			if(gimnasta.getDni() == dni) {//creo que el error es que gimnasta es un objeto vacio
+				g=gimnasta;						//entonces hay que gimnasta a un objeto real.
+				gimnasta.toString();
 				break;
 			} else {
-				Utils.print("No existe ningun gimnasta con el siguiente dorsal "+dorsal);
+				Utils.print("No existe ningun gimnasta con el siguiente dorsal "+dni);
 			}
 		}
 		return g;
