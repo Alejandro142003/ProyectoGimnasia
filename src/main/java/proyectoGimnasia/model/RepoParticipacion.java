@@ -2,7 +2,10 @@ package proyectoGimnasia.model;
 
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.List;
+
 import proyectoGimnasia.interfaces.iRepoParticipacion;
+import proyectoGimnasia.model.DTO.Gimnasta;
 import proyectoGimnasia.model.DTO.Participacion;
 import proyectoGimnasia.utils.Utils;
 
@@ -71,6 +74,15 @@ public class RepoParticipacion<T> implements iRepoParticipacion<T> {
 		}
 		return p;
 		
+	}
+	
+	public List<Participacion<T>> getParticipaciones() {
+		Participacion<T> p = null;
+		return (List<Participacion<T>>) p;
+	}
+	
+	public void setParticipaciones(List<Participacion<T>> participaciones) {
+		this.participaciones = (ArrayList<Participacion<T>>) participaciones;
 	}
 
 }

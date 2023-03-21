@@ -26,9 +26,9 @@ public class ControlParticipacion<T> implements iControllerParticipacion {
 			
 			option=Utils.leeEntero("Elije la opcion: ");
 			switch(option) {
-				case 0:
+				case 5:
 					valid=true;
-					Utils.print("Has salido correctamente del menu competicion.");
+					Utils.print("Has salido correctamente del menu participacion.");
 					break;
 				case 1:
 					controllerAddParticipation();
