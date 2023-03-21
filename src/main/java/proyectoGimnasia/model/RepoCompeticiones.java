@@ -30,12 +30,15 @@ public class RepoCompeticiones implements iRepoCompeticion ,Serializable{
 	
 	private RepoCompeticiones(boolean fake) {
 		RepoCompeticiones copia = XMLManager.readXML(new RepoCompeticiones(), "competicion.xml");
+		System.out.println("CREANDO REPO");
 		if(copia!=null) {
+			System.out.println("REPO ENCONTRADO");
 			this.competiciones = copia.getCompeticiones();
 		}
 		if(this.competiciones==null) {
 			this.competiciones = new ArrayList<>();
 		}
+		System.out.println(copia);
 	}
 	
 	private RepoCompeticiones() {
@@ -43,7 +46,7 @@ public class RepoCompeticiones implements iRepoCompeticion ,Serializable{
 	}
 	
 	public static RepoCompeticiones newInstance() {
-		if(_instance == null) _instance = new RepoCompeticiones();
+		if(_instance == null) _instance = new RepoCompeticiones(true);
 			return _instance;
 	}
 	
