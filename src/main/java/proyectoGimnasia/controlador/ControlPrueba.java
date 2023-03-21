@@ -8,7 +8,6 @@ import proyectoGimnasia.cruds.PruebaCrud;
 import proyectoGimnasia.interfaces.iControllerPrueba;
 import proyectoGimnasia.interfaces.iGUIPrueba;
 import proyectoGimnasia.model.RepoCompeticiones;
-import proyectoGimnasia.model.RepoPrueba;
 import proyectoGimnasia.model.DTO.Aparato;
 import proyectoGimnasia.model.DTO.Categoria;
 import proyectoGimnasia.model.DTO.Competicion;
@@ -24,7 +23,6 @@ public class ControlPrueba implements iControllerPrueba {
 
 	
 	  private iGUIPrueba guiPrueba = new PruebaView();
-	    private RepoPrueba repoPrueba = new RepoPrueba();
 	    private Prueba prueba = new Prueba();
 	    private PruebaCrud crud = new PruebaCrud();
 	    List<Prueba> pruebas = new ArrayList<>();
@@ -87,7 +85,7 @@ public class ControlPrueba implements iControllerPrueba {
 	    	   Utils.print("No se ha introducido correctamente la prueba");
 	       }
 	      
-	       }
+	     }
 
 
 
@@ -100,7 +98,16 @@ public class ControlPrueba implements iControllerPrueba {
 			 Categoria categoria = Utils.validCategoria("Introduce la categoríade la prueba: ");
 			 Aparato aparato = Utils.validAparato("Introduce el aparato de la prueba: ");
 			 Prueba p = new Prueba(tipo, categoria, aparato);
-	    	 if(crud.editarPrueba(nombre, p)==true) {
+			 
+			 Prueba pnueva = new Prueba();
+			 Tipo tipo2 = Utils.validTipo("Introduzca el nuevo tipo: ");
+			 pnueva.setTipo(tipo2);
+			 Categoria categoria2 = Utils.validCategoria("Introduzca la nueva categoría: ");
+			 pnueva.setCategoria(categoria2);
+			 Aparato aparato2 = Utils.validAparato("Introduzca el nuevo aparato: ");
+			 pnueva.setAparato(aparato2);
+			 
+	    	 if(crud.editarPrueba(nombre, p,pnueva)) {
 	    		 Utils.print("Se ha editado correctamente");
 	    	 }else{
 	    		 Utils.print("No se ha encontrado la prueba");
@@ -119,7 +126,7 @@ public class ControlPrueba implements iControllerPrueba {
 		    Aparato aparato = Utils.validAparato("Introduce el aparato de la prueba: ");
 	    	Prueba p = new Prueba(tipo, categoria, aparato);
 	    	crud.mostrarPrueba(nombre, p);
-	    	}
+	    }
 	    	
 	    	
 	        

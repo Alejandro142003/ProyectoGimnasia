@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProyectoGestionCompeticionesGimnasia>
     <competiciones>
-        <descripcion>fehe</descripcion>
-        <fechaInicio>2022-02-02T00:00:00+01:00</fechaInicio>
+        <descripcion>test</descripcion>
+        <fechaInicio>1980-04-01T00:00:00+01:00</fechaInicio>
         <nombre>cp</nombre>
         <pruebas>
-            <aparato>cuerda</aparato>
-            <categoria>senior</categoria>
+            <aparato>mazas</aparato>
+            <categoria>prebenjamin</categoria>
+            <tipo>individual</tipo>
+        </pruebas>
+        <pruebas>
+            <aparato>aro</aparato>
+            <categoria>benjamin</categoria>
             <tipo>grupo</tipo>
         </pruebas>
     </competiciones>

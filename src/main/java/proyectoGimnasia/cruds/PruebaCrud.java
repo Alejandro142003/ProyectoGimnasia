@@ -8,8 +8,6 @@ import proyectoGimnasia.model.DTO.Tipo;
 import proyectoGimnasia.utils.Utils;
 import proyectoGimnasia.model.DTO.Aparato;
 import proyectoGimnasia.model.RepoCompeticiones;
-import proyectoGimnasia.model.RepoPrueba;
-
 import java.util.List;
 
 public class PruebaCrud {
@@ -50,23 +48,23 @@ public class PruebaCrud {
 		
 	}
 	
-	public boolean editarPrueba (String nombreComp, Prueba p) {
+	public boolean editarPrueba (String nombreComp, Prueba p, Prueba pnueva) {
 		boolean valid = false;
 		RepoCompeticiones rc= RepoCompeticiones.newInstance();
 		List<Competicion> comps = rc.getCompeticiones();
 		for(Competicion c: comps) {
-			List<Prueba> pruebas = c.getPruebas();       
 			if(c.getNombre().equals(nombreComp)) {
-				valid = c.getPruebas().contains(p);
-				Tipo tipo = Utils.validTipo("Introduzca el nuevo tipo: ");
-				p.setTipo(tipo);
-				Categoria categoria = Utils.validCategoria("Introduzca la nueva categoría: ");
-				p.setCategoria(categoria);
-				Aparato aparato = Utils.validAparato("Introduzca el nuevo aparato: ");
-				p.setAparato(aparato);
-				rc.setCompeticiones(comps);
-				rc.guardarXML(comps);
-				valid=true;
+				List<Prueba> pruebas = c.getPruebas();  
+				if(c.getPruebas().contains(p) && !c.getPruebas().contains(pnueva)) {
+					Prueba pfound = pruebas.get(pruebas.lastIndexOf(p));
+					pfound.setAparato(pnueva.getAparato());
+					pfound.setTipo(pnueva.getTipo());
+					pfound.setCategoria(pnueva.getCategoria());
+					rc.setCompeticiones(comps);
+					rc.guardarXML(comps);
+					valid=true;
+				}
+				
 			}
 		}
 		return valid;

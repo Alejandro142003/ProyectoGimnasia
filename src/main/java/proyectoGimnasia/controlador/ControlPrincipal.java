@@ -16,6 +16,7 @@ public class ControlPrincipal<T> {
 	
 	
 	public void controllerMainMenu() {
+		RepoCompeticiones rp = RepoCompeticiones.newInstance();
 		boolean valid = false;
 		int option;
 		do {
