@@ -23,7 +23,7 @@ public class RepoGimnasta implements iRepoGimnasta ,Serializable{
 	private List<Gimnasta> gimnastas;
 	
 	private RepoGimnasta(boolean fake) {
-		RepoGimnasta copia = XMLManager.readXML(new RepoGimnasta(true), "gimnasta.xml");
+		RepoGimnasta copia = XMLManager.readXML(new RepoGimnasta(), "gimnasta.xml");
 		if(copia!=null) {
 			this.gimnastas = copia.getGimnastas();
 		}

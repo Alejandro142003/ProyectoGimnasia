@@ -15,8 +15,8 @@ public class Gimnasta extends Persona implements Serializable{
 		this.club="";
 	}
 
-	public Gimnasta(String dni, String nombre, String correo, int telefono, String categoria, String club) {
-		super(dni, nombre, correo, telefono);
+	public Gimnasta(String dni, String nombre, String correo, int telefono, String categoria, String club, int edad) {
+		super(dni, nombre, correo, telefono, edad);
 		this.categoria = categoria;
 		this.club = club;
 	}
@@ -41,6 +41,7 @@ public class Gimnasta extends Persona implements Serializable{
 	@Override
 	public String toString() {
 	    return "Gimnasta:\n"
+	    	 + super.toString()
 	         + " - Categoria: " + categoria + "\n"
 	         + " - Club: " + club + "\n";
 	}
