@@ -78,8 +78,8 @@ public class ControlGimnasta implements iControllerGimnasta {
 
 	@Override
 	public void controllerShowGymnast() {
-		String dorsal=Utils.leeString("Introduce el dorsal del gimnasta que desea mostrar: ");
-		Utils.printObject(dorsal);
+		String dni=Utils.leeString("Introduce el dni del gimnasta que desea mostrar: ");
+		gc.showGymnast(dni);
 	}
 
 	@Override
