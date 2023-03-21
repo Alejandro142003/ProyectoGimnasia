@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProyectoGestionCompeticionesGimnasia>
     <competiciones>
-        <descripcion>test</descripcion>
-        <fechaInicio>1980-04-01T00:00:00+01:00</fechaInicio>
+        <descripcion>semiprofesional</descripcion>
+        <fechaInicio>2000-04-10T00:00:00+02:00</fechaInicio>
         <nombre>cp</nombre>
         <pruebas>
             <aparato>mazas</aparato>

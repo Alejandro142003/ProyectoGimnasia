@@ -65,7 +65,7 @@ public class ControlCompeticion implements iControllerCompeticion{
 		String descripcion=Utils.leeString("Introduce la descripcion de la competicion: ");
 		Date fechaInicio=Utils.validFecha("Introduce la fecha de incio de la competicion: ");
 		Competicion nCompeticion = new Competicion(nombre, descripcion, fechaInicio);
-		if(compCrud.addCompetition(nCompeticion)==true) {
+		if(compCrud.addCompetition(nCompeticion)) {
 			Utils.print("Se ha introducido correctamente la competicion.");
 		}else {
 			Utils.print("No se ha introducido la competicion.");
@@ -73,7 +73,19 @@ public class ControlCompeticion implements iControllerCompeticion{
 	}
 
 	public void controllerEditCompetition() {
-		compCrud.editCompetition();
+		controllerShowAllCompetitions();
+		Competicion c = null;
+		c = (Competicion) compCrud.findCompetition(Utils.leeString("Introduce el nombre de la competicion: "));
+		String descripcion = Utils.leeString("Introduce la nueva descripcion: ");
+		c.setDescripcion(descripcion);
+		Date fechaInicio = Utils.validFecha("Introduce la nueva fecha de inicio: ");
+		c.setFechaInicio(fechaInicio);
+		
+		if(compCrud.editCompetition(c)) {
+			Utils.print("Se ha actualizado correctamente.");
+		}else {
+			Utils.print("No se ha actualizado la competicion.");
+		}
 		
 		
 	}
@@ -90,6 +102,7 @@ public class ControlCompeticion implements iControllerCompeticion{
 	}
 	
 	public void controllerShowAllCompetitions() {
+		Utils.print("LISTA COMPETICIONES");
 		String competiciones = compCrud.showAll();
 		Utils.printObject(competiciones);
 	}
