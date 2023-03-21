@@ -4,6 +4,7 @@ import proyectoGimnasia.model.RepoGimnasta;
 import proyectoGimnasia.model.DTO.Gimnasta;
 import proyectoGimnasia.utils.Utils;
 
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -62,14 +63,13 @@ public class GimnastasCrud{
 	public Gimnasta showGymnast(String dni) {
 		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Gimnasta> gim = rg.getGimnastas();
-		Gimnasta g = null;
-		for(Gimnasta gimnasta:gim) {
-			if(gimnasta.getDni() == dni) {//creo que el error es que gimnasta es un objeto vacio
-				g=gimnasta;						//entonces hay que gimnasta a un objeto real.
-				gimnasta.toString();
-				break;
+		Iterator<Gimnasta> it = gim.iterator();
+		Gimnasta g = it.next();
+		while(it.hasNext()) {
+			if(g.getDni() == dni) {
+				g.toString();
 			} else {
-				Utils.print("No existe ningun gimnasta con el siguiente dorsal "+dni);
+				Utils.print("No existe ningun gimnasta con el siguiente dni "+dni);
 			}
 		}
 		return g;
@@ -81,7 +81,7 @@ public class GimnastasCrud{
 		String result ="";
 		for (Gimnasta gimnasta:gim) {
 			if (gim.isEmpty()) {
-				Utils.print("No existe ningún gimnasta para mostrar");//Quizas haya que cambiarlo por return+="";
+				Utils.print("No existe ningún gimnasta para mostrar");
 			} else {
 				if (gimnasta !=null ) {
 					result+=gimnasta+"\n";
