@@ -28,14 +28,17 @@ public class RepoGimnasta implements iRepoGimnastaGrupo ,Serializable{
 		RepoGimnasta copia = XMLManager.readXML(new RepoGimnasta(), "gimnasta.xml");
 		if(copia!=null) {
 			this.gimnastas = copia.getGimnastas();
+			this.grupos = copia.getGrupos();
 		}
-		if(this.gimnastas==null) {
+		if(this.gimnastas==null && this.grupos==null) {
 			this.gimnastas = new ArrayList<>();
+			this.grupos = new ArrayList<>();
 		}
 	}
 	
 	private RepoGimnasta() {
 		this.gimnastas= new ArrayList<>();
+		this.grupos= new ArrayList<>();
 	}
 	
 	public static RepoGimnasta newInstance() {

@@ -12,7 +12,7 @@ public class GruposCrud {
 	public boolean addGroup(Grupo g) {
 		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Grupo> gru = rg.getGrupos();
-		boolean result=gru.add(g);
+		boolean result = gru.add(g);
 		if (result) {
 			rg.setGrupos(gru);
 			rg.guardarXMLGrupo(gru);
