@@ -1,10 +1,12 @@
 package proyectoGimnasia.model.DTO;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Grupo {
+public class Grupo implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	private String groupName;
-	private int dorsal;
 	private String club;
 	private ArrayList<Gimnasta> listGimnasta;
 
@@ -12,10 +14,9 @@ public class Grupo {
         listGimnasta = new ArrayList<Gimnasta>();
     }
   
-    public Grupo(String groupName, int dorsal, String club, ArrayList<Gimnasta> listGimnasta) {
+    public Grupo(String groupName, String club, ArrayList<Gimnasta> listGimnasta) {
     
 		this.groupName = groupName;
-		this.dorsal = dorsal;
 		this.club = club;
 		this.listGimnasta = listGimnasta;
 	}
@@ -26,14 +27,6 @@ public class Grupo {
 
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
-	}
-
-	public int getDorsal() {
-		return dorsal;
-	}
-
-	public void setDorsal(int dorsal) {
-		this.dorsal = dorsal;
 	}
 
 	public String getClub() {
@@ -52,11 +45,12 @@ public class Grupo {
 		this.listGimnasta = listGimnasta;
 	}
 
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + dorsal;
 		result = prime * result + ((groupName == null) ? 0 : groupName.hashCode());
 		return result;
 	}
@@ -70,8 +64,6 @@ public class Grupo {
 		if (getClass() != obj.getClass())
 			return false;
 		Grupo other = (Grupo) obj;
-		if (dorsal != other.dorsal)
-			return false;
 		if (groupName == null) {
 			if (other.groupName != null)
 				return false;
@@ -84,9 +76,7 @@ public class Grupo {
 	public String toString() {
 	    return "Grupo:\n"
 	         + " - Nombre del grupo: " + groupName + "\n"
-	         + " - Dorsal: " + dorsal + "\n"
 	         + " - Club: " + club + "\n";
 	}
-
 }
 

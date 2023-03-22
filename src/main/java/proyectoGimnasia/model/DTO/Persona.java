@@ -5,6 +5,7 @@ public class Persona {
 	private String nombre;
 	private String correo;
 	private int telefono;
+	private int edad;
 	
 	public Persona() {
 		this.dni="";
@@ -13,12 +14,13 @@ public class Persona {
 		this.telefono=0;
 	}
 
-	public Persona(String dni, String nombre, String correo, int telefono) {
+	public Persona(String dni, String nombre, String correo, int telefono, int edad) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
 		this.correo = correo;
 		this.telefono = telefono;
+		this.edad = edad;
 	}
 
 	public String getDni() {
@@ -53,6 +55,14 @@ public class Persona {
 		this.telefono = telefono;
 	}
 
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -80,11 +90,11 @@ public class Persona {
 	
 	@Override
 	public String toString() {
-	    return "Persona:\n"
-	         + " - DNI: " + dni + "\n"
+	    return " - DNI: " + dni + "\n"
 	         + " - Nombre: " + nombre + "\n"
 	         + " - Correo: " + correo + "\n"
-	         + " - Telefono: " + telefono + "\n";
+	         + " - Telefono: " + telefono + "\n"
+	    	 + " - Edad: "+ edad + "\n";
 	}
 
 

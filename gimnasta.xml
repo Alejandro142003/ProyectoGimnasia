@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProyectoGestionCompeticionesGimnasia>
     <gimnastas>
-        <correo>a@gmail.com</correo>
-        <dni>20953342C</dni>
-        <nombre>Xela</nombre>
-        <telefono>694451972</telefono>
-        <categoria>Senior</categoria>
-        <club>club2</club>
-        <dorsal>10</dorsal>
+        <correo>ala@32</correo>
+        <dni>12345678A</dni>
+        <edad>0</edad>
+        <nombre>Ala</nombre>
+        <telefono>12345</telefono>
+        <categoria>alsdjf</categoria>
+        <club>ldajf</club>
+    </gimnastas>
+    <gimnastas>
+        <correo>jhones@gmail.es</correo>
+        <dni>12345678C</dni>
+        <edad>0</edad>
+        <nombre>jhon</nombre>
+        <telefono>987654321</telefono>
+        <categoria>libre</categoria>
+        <club>jhones unites</club>
+    </gimnastas>
+    <gimnastas>
+        <correo>loco@peo.es</correo>
+        <dni>23456789A</dni>
+        <edad>45</edad>
+        <nombre>LOCO</nombre>
+        <telefono>9832714</telefono>
+        <categoria>Culturisto</categoria>
+        <club>Culturistas por navarra</club>
     </gimnastas>
 </ProyectoGestionCompeticionesGimnasia>

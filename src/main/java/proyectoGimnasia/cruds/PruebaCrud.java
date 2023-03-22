@@ -15,21 +15,32 @@ public class PruebaCrud {
 
 
 
-	public static boolean agregaPrueba(String nombreComp,Prueba p) {
-        boolean result = false;
-        RepoCompeticiones rc=RepoCompeticiones.newInstance();
-        List<Competicion> comps = rc.getCompeticiones();
-        for(Competicion c : comps) {
-            if(c.getNombre().equalsIgnoreCase(nombreComp)) {
-                result = c.getPruebas().add(p);
-                break;
-            }
-        }
-        if(result) {
-            rc.guardarXML(comps);
-        }
-        return result;
-    }
+	public static boolean agregaPrueba(String nombreComp, Prueba p) {
+	    boolean result = false;
+	    RepoCompeticiones rc = RepoCompeticiones.newInstance();
+	    List<Competicion> comps = rc.getCompeticiones();
+	    boolean compExists = false;
+	    for (Competicion c : comps) {
+	        if (c.getNombre().equalsIgnoreCase(nombreComp)) {
+	            compExists = true;
+	            if (!c.getPruebas().contains(p)) {
+	                result = c.getPruebas().add(p);
+	                break;
+	            } else {
+	                Utils.print("Ya existe una prueba igual en la competición");
+	            }
+	        }
+	    }
+	    if (!compExists) {
+	        Utils.print("No existe la competición");
+	    } else if (result) {
+	        rc.guardarXML(comps);
+	    }
+	    return result;
+	}
+
+
+
 	
 	public boolean eliminaPrueba(String nombreComp, Prueba p) {
 		boolean result = false;
@@ -71,37 +82,38 @@ public class PruebaCrud {
 	}
   
 
-	public static void mostrarPrueba(String nombreComp, Prueba p) {
+	public Prueba mostrarPrueba(String nombreComp, Prueba p) {
 	    RepoCompeticiones rc = RepoCompeticiones.newInstance();
 	    List<Competicion> comps = rc.getCompeticiones();
+	    Prueba p1 = null;
 	    for (Competicion c : comps) {
 	        if (c.getNombre().equalsIgnoreCase(nombreComp)) {
+	        	List<Prueba> pruebas = c.getPruebas();  
 	            if (c.getPruebas().contains(p)) {
-	               Utils.print("Tipo: "+p.getTipo());
-	               Utils.print("Categoria: "+p.getCategoria());
-	               Utils.print("Aparato: "+p.getAparato());
-	     
+	               p1=p;
 	            } else {
 	            	Utils.print("La prueba no se encontró en la competición.");
 	            }
-	        }
-	      Utils.print("La competición no se encontró.");
+	        }    
+	
 	    }
+	    return p1;
 	}
 
 	
-	public static void mostrarTodasLasPruebas() {     
+	public static void mostrarTodasLasPruebas(String nombreComp) {     
     	RepoCompeticiones rc = RepoCompeticiones.newInstance();     
     	List<Competicion> comps = rc.getCompeticiones();     
-    	for (Competicion c : comps) {         
+    	for (Competicion c : comps) {    
+    		if(c.getNombre().equalsIgnoreCase(nombreComp)) {
     		List<Prueba> pruebas = c.getPruebas();         
     		for (Prueba p : pruebas) {             
     			System.out.println(p.toString());  
     		}
     	}
     }
+	}
 	
-	
-	
+
 }
 

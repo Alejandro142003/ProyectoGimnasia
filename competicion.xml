@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProyectoGestionCompeticionesGimnasia>
     <competiciones>
-        <descripcion>semiprofesional</descripcion>
-        <fechaInicio>2000-04-10T00:00:00+02:00</fechaInicio>
+        <descripcion>ergrgeg</descripcion>
+        <fechaInicio>2019-02-02T00:00:00+01:00</fechaInicio>
         <nombre>cp</nombre>
         <pruebas>
-            <aparato>mazas</aparato>
-            <categoria>prebenjamin</categoria>
-            <tipo>individual</tipo>
+            <aparato>cuerda</aparato>
+            <categoria>senior</categoria>
+            <tipo>grupo</tipo>
         </pruebas>
+    </competiciones>
+    <competiciones>
+        <descripcion>ergerger</descripcion>
+        <fechaInicio>2022-03-02T00:00:00+01:00</fechaInicio>
+        <nombre>geger3</nombre>
         <pruebas>
             <aparato>aro</aparato>
-            <categoria>benjamin</categoria>
-            <tipo>grupo</tipo>
+            <categoria>infantil</categoria>
+            <tipo>individual</tipo>
         </pruebas>
     </competiciones>
 </ProyectoGestionCompeticionesGimnasia>
