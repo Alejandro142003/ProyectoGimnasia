@@ -20,9 +20,4 @@
             <tipo>individual</tipo>
         </pruebas>
     </competiciones>
-    <competiciones>
-        <descripcion>fewfgeger</descripcion>
-        <fechaInicio>2022-02-20T00:00:00+01:00</fechaInicio>
-        <nombre>rere</nombre>
-    </competiciones>
 </ProyectoGestionCompeticionesGimnasia>

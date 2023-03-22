@@ -23,8 +23,12 @@ public class PruebaCrud {
 	    for (Competicion c : comps) {
 	        if (c.getNombre().equalsIgnoreCase(nombreComp)) {
 	            compExists = true;
-	            result = c.getPruebas().add(p);
-	            break;
+	            if (!c.getPruebas().contains(p)) {
+	                result = c.getPruebas().add(p);
+	                break;
+	            } else {
+	                Utils.print("Ya existe una prueba igual en la competición");
+	            }
 	        }
 	    }
 	    if (!compExists) {
@@ -34,6 +38,8 @@ public class PruebaCrud {
 	    }
 	    return result;
 	}
+
+
 
 	
 	public boolean eliminaPrueba(String nombreComp, Prueba p) {
