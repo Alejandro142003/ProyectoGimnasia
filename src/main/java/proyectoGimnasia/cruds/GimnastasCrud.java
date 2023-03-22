@@ -16,7 +16,7 @@ public class GimnastasCrud{
 		boolean result=gim.add(g);
 		if (result) {
 			rg.setGimnastas(gim);
-			rg.guardarXML(gim);
+			rg.guardarXMLGimnasta(gim);
 		}
 		return result;
 	}
@@ -32,7 +32,7 @@ public class GimnastasCrud{
 			for (Gimnasta gimnasta : gim) {
 				if (gimnasta.equals(g)) {
 					rg.setGimnastas(gim);
-					rg.guardarXML(gim);
+					rg.guardarXMLGimnasta(gim);
 					result = true;
 				}
 			}
@@ -46,7 +46,7 @@ public class GimnastasCrud{
 		boolean result=gim.remove(g);
 		if (result) {
 			rg.setGimnastas(gim);
-			rg.guardarXML(gim);
+			rg.guardarXMLGimnasta(gim);
 		}
 		return result;
 	}

@@ -2,23 +2,21 @@ package proyectoGimnasia.model.DTO;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Grupo implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	private String groupName;
 	private String club;
-	private ArrayList<Gimnasta> listGimnasta;
+	private List<Gimnasta> listGimnasta;
 
-    public Grupo() {
-        listGimnasta = new ArrayList<Gimnasta>();
-    }
   
-    public Grupo(String groupName, String club, ArrayList<Gimnasta> listGimnasta) {
+    public Grupo(String groupName, String club) {
     
 		this.groupName = groupName;
 		this.club = club;
-		this.listGimnasta = listGimnasta;
+		listGimnasta = new ArrayList<Gimnasta>();
 	}
 
 	public String getGroupName() {
@@ -37,15 +35,13 @@ public class Grupo implements Serializable{
 		this.club = club;
 	}
 
-	public ArrayList<Gimnasta> getListGimnasta() {
+	public List<Gimnasta> getListGimnasta() {
 		return listGimnasta;
 	}
 
-	public void setListGimnasta(ArrayList<Gimnasta> listGimnasta) {
+	public void setListGimnasta(List<Gimnasta> listGimnasta) {
 		this.listGimnasta = listGimnasta;
 	}
-
-
 
 	@Override
 	public int hashCode() {

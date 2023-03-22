@@ -1,14 +1,11 @@
 package proyectoGimnasia.controlador;
 
-import java.util.Date;
-
 import proyectoGimnasia.cruds.GimnastasCrud;
 import proyectoGimnasia.interfaces.iControllerGimnasta;
 import proyectoGimnasia.interfaces.iGUIGimnasta;
 import proyectoGimnasia.interfaces.iGUIGrupo;
 import proyectoGimnasia.vistas.GimnastaView;
 import proyectoGimnasia.vistas.GrupoView;
-import proyectoGimnasia.model.DTO.Competicion;
 import proyectoGimnasia.model.DTO.Gimnasta;
 import proyectoGimnasia.utils.Utils;
 
@@ -54,6 +51,15 @@ public class ControlGimnasta implements iControllerGimnasta {
 					break;
 					
 				case 6:
+					this.parent.cGrupo.controlGrouptMenu(opt);
+					break;
+					
+				case 7:
+					controllerShowAllGymnast();
+					this.parent.cGrupo.controllerShowAllGroups();
+					break;
+					
+				case 8:
 					Utils.print("");
 					salir = true;
 					break;
