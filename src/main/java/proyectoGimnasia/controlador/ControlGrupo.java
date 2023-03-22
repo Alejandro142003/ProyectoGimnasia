@@ -1,5 +1,8 @@
 package proyectoGimnasia.controlador;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import proyectoGimnasia.cruds.GimnastasCrud;
 import proyectoGimnasia.cruds.GruposCrud;
 import proyectoGimnasia.interfaces.iControllerGrupo;
@@ -70,8 +73,8 @@ public class ControlGrupo implements iControllerGrupo{
 		String club = Utils.leeString("Introduce el nombre del club:");
 		//Añadir array del gimnastas
 		
-		
-		Grupo grupo = new Grupo(Nombre,club);
+		ArrayList<Gimnasta> gimnastas = new ArrayList<Gimnasta>();
+		Grupo grupo = new Grupo(Nombre,club, gimnastas);
 		if(grc.addGroup(grupo)==true) {
 			Utils.print("Se ha introducido correctamente el gimnasta.");
 		}else {
