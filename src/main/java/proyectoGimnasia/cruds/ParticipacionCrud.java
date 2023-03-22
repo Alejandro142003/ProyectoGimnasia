@@ -50,26 +50,24 @@ public class ParticipacionCrud<T> {
         return result;
     }
 
-    public static <T> boolean editarParticipacion(String nombreComp, Participacion<T> p, Participacion<T> pnueva, Prueba p1) {
-        boolean valid = false;
+    public static <T> boolean editaParticipacion(String nombreComp, Prueba p1, Participacion<T> p, Participacion<T> nuevaParticipacion) {
+        boolean result = false;
         RepoCompeticiones rc = RepoCompeticiones.newInstance();
         List<Competicion> comps = rc.getCompeticiones();
         for (Competicion c : comps) {
-            if (c.getNombre().equals(nombreComp)) {
-                ArrayList<Participacion<T>> participaciones = p1.getParticipaciones();
-                if (c.getPruebas().contains(p1) && !p1.getParticipaciones().contains(pnueva) && c.getPruebas().contains(p)) {
-                    Participacion<T> pfound = participaciones.get(participaciones.lastIndexOf(p));
-                    pfound.setParticipantes(pnueva.getParticipantes());
-                    pfound.setHora(pnueva.getHora());
-                    pfound.setPuntuacion(pnueva.getPuntuacion());
-                    rc.setCompeticiones(comps);
-                    rc.guardarXML(comps);
-                    valid = true;
+            if (c.getNombre().equalsIgnoreCase(nombreComp)) {
+                if (c.getPruebas().contains(p1) && p1.getParticipaciones().contains(p)) {
+                    int index = p1.getParticipaciones().indexOf(p);
+                    p1.getParticipaciones().set(index, nuevaParticipacion);
+                    result = true;
                 }
-
+                break;
             }
         }
-        return valid;
+        if (result) {
+            rc.guardarXML(comps);
+        }
+        return result;
     }
 
     public static <T> void mostrarParticipacion(String nombreComp, Prueba p1, Participacion<T> p) {
