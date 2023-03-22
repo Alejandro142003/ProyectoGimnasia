@@ -1,8 +1,11 @@
 package proyectoGimnasia.interfaces;
 
+import java.util.List;
+
+import proyectoGimnasia.model.DTO.Grupo;
+
 public interface iRepoGrupo {
-	void addGroup();
-	void editGroup();
-	void showGroup();
-	void deleteGroup();
+	public List<Grupo> getGrupos();
+	public void setGrupos(List<Grupo> grupos);
+	public boolean guardarXML(List<Grupo> grupos);
 }
