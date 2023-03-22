@@ -9,7 +9,6 @@ public class GimnastaView implements iGUIGimnasta{
 		print("|            MENU PARTICIPANTES          |");
 		print("+----------------------------------------+");
 		print("|                                        |");
-		print("|                                        |");
 		print("|  {1} Añadir gimnasta                   |");
 		print("|  {2} Editar gimnasta                   |");
 		print("|  {3} Mostrar gimnasta                  |");

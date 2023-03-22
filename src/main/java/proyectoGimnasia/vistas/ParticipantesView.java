@@ -10,15 +10,16 @@ public class ParticipantesView {
 	 */
 	
 	public static void menuParticipantes() {
-		print(" ---------- Menú Participantes      ---------- ");
-		print("|                                             |");
-		print("|                                             |");
-		print("|  {1} Mostrar participantes                  |");
-		print("|  {2} Menú gimnastas                         |");
-		print("|  {3} Menú grupos                            |");
-		print("|  {4} Salir                                  |");
-		print("|                                             |");
-		print(" --------------------------------------------- ");
+		print("+----------------------------------------+");
+		print("|            MENU PARTICIPANTES          |");
+		print("+----------------------------------------+");
+		print("|                                        |");
+		print("|  {1} Mostrar participantes             |");
+		print("|  {2} Menú gimnastas                    |");
+		print("|  {3} Menú grupos                       |");
+		print("|  {4} Volver                             |");
+		print("|                                        |");
+		print("+----------------------------------------+");
 		
 	}
 	
