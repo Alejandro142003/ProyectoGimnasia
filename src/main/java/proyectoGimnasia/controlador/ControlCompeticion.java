@@ -1,14 +1,10 @@
 package proyectoGimnasia.controlador;
 
-import java.time.LocalDate;
-import java.util.Date;
 
+import java.util.Date;
 import proyectoGimnasia.cruds.CompeticionCrud;
 import proyectoGimnasia.interfaces.iControllerCompeticion;
-import proyectoGimnasia.interfaces.iControllerPrueba;
 import proyectoGimnasia.interfaces.iGUICompeticion;
-import proyectoGimnasia.interfaces.iRepoCompeticion;
-import proyectoGimnasia.model.RepoCompeticiones;
 import proyectoGimnasia.model.DTO.Competicion;
 import proyectoGimnasia.utils.Utils;
 import proyectoGimnasia.vistas.CompeticionView;
@@ -75,17 +71,23 @@ public class ControlCompeticion implements iControllerCompeticion{
 	public void controllerEditCompetition() {
 		controllerShowAllCompetitions();
 		Competicion c = null;
-		c = (Competicion) compCrud.findCompetition(Utils.leeString("Introduce el nombre de la competicion: "));
-		String descripcion = Utils.leeString("Introduce la nueva descripcion: ");
-		c.setDescripcion(descripcion);
-		Date fechaInicio = Utils.validFecha("Introduce la nueva fecha de inicio: ");
-		c.setFechaInicio(fechaInicio);
-		
-		if(compCrud.editCompetition(c)) {
-			Utils.print("Se ha actualizado correctamente.");
+		c = (Competicion) compCrud.findCompetition(Utils.leeString("Introduce el nombre de la competicion que desea editar: "));
+		if(c==null) {
+			Utils.print("La competición no existe.");
 		}else {
-			Utils.print("No se ha actualizado la competicion.");
+			String descripcion = Utils.leeString("Introduce la nueva descripcion: ");
+			c.setDescripcion(descripcion);
+			Date fechaInicio = Utils.validFecha("Introduce la nueva fecha de inicio: ");
+			c.setFechaInicio(fechaInicio);
+			
+			if(compCrud.editCompetition(c)) {
+				Utils.print("Se ha actualizado correctamente.");
+			}else {
+				Utils.print("No se ha actualizado la competicion.");
+			}
 		}
+		
+		
 		
 		
 	}
