@@ -9,6 +9,7 @@ import proyectoGimnasia.interfaces.iControllerPrueba;
 import proyectoGimnasia.interfaces.iGUIPrueba;
 import proyectoGimnasia.model.DTO.Aparato;
 import proyectoGimnasia.model.DTO.Categoria;
+import proyectoGimnasia.model.DTO.Competicion;
 import proyectoGimnasia.model.DTO.Prueba;
 import proyectoGimnasia.model.DTO.Tipo;
 import proyectoGimnasia.utils.Utils;
@@ -73,7 +74,7 @@ public class ControlPrueba implements iControllerPrueba {
 	    
 	    @Override
 	    public void controllerAddPrueba() {
-	       String nombre = Utils.leeString("Introduce la competición para añadirle pruebas: ");
+	       String nombre = Utils.leeString("Introduce la competición para añadirle pruebas: "); 
 	       guiPrueba.TipoPrueba();
 	       Tipo tipo = Utils.validTipo("Introduce el tipo de prueba: ");
 	       guiPrueba.CategoriaPrueba();
@@ -81,7 +82,7 @@ public class ControlPrueba implements iControllerPrueba {
 	       guiPrueba.AparatoPrueba();
 	       Aparato aparato = Utils.validAparato("Introduce el aparato: ");
 	       Prueba prueba = new Prueba(tipo, categoria, aparato);
-	       if(crud.agregaPrueba(nombre, prueba)){
+	       if(PruebaCrud.agregaPrueba(nombre, prueba)){
 	    	   Utils.print("Se ha introducido correctamente la prueba");
 	       }else {
 	    	   Utils.print("No se ha introducido correctamente la prueba");
@@ -96,11 +97,15 @@ public class ControlPrueba implements iControllerPrueba {
 	    @Override
 	    public void controllerEditPrueba() {
 	    	 String nombre = Utils.leeString("Introduce la competición para editarle prueba: ");
+	    	 crud.mostrarTodasLasPruebas(nombre);
+	    	 Utils.print("Lista de pruebas:");
+	    	    for (int i = 0; i < pruebas.size(); i++) {
+	    	        System.out.println((i+1) + ") " + pruebas.get(i).toString());
+	    	    }
 	    	 Tipo tipo = Utils.validTipo("Introduce el tipo de prueba: ");
 			 Categoria categoria = Utils.validCategoria("Introduce la categoríade la prueba: ");
 			 Aparato aparato = Utils.validAparato("Introduce el aparato de la prueba: ");
 			 Prueba p = new Prueba(tipo, categoria, aparato);
-			 
 			 Prueba pnueva = new Prueba();
 			 Tipo tipo2 = Utils.validTipo("Introduzca el nuevo tipo: ");
 			 pnueva.setTipo(tipo2);
@@ -138,7 +143,12 @@ public class ControlPrueba implements iControllerPrueba {
 
 	    @Override
 	    public void controllerRemovePrueba() {
-	    	String nombre = Utils.leeString("Introduce la competición de la que quieres ver sus pruebas: ");
+	    	 String nombre = Utils.leeString("Introduce la competición de la que quieres ver sus pruebas: ");
+	    	 crud.mostrarTodasLasPruebas(nombre);
+	    	 Utils.print("Lista de pruebas:");
+	    	    for (int i = 0; i < pruebas.size(); i++) {
+	    	        System.out.println((i+1) + ") " + pruebas.get(i).toString());
+	    	    }
 	    	 Tipo tipo = Utils.validTipo("Introduce el tipo de prueba: ");
 		     Categoria categoria = Utils.validCategoria("Introduce la categoría: ");
 		     Aparato aparato = Utils.validAparato("Introduce el aparato: ");
@@ -152,7 +162,8 @@ public class ControlPrueba implements iControllerPrueba {
 	    
 	    
 	    public void controllerShowAllPruebas() {
-	    	crud.mostrarTodasLasPruebas();
+	    	String nombre = Utils.leeString("Introduce la competición de la que quieres ver sus pruebas: ");
+	    	crud.mostrarTodasLasPruebas(nombre);
 	    	
 	    }
 
