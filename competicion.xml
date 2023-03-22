@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ProyectoGestionCompeticionesGimnasia/>
+<ProyectoGestionCompeticionesGimnasia>
+    <competiciones>
+        <descripcion>dwqd</descripcion>
+        <fechaInicio>2000-04-19T00:00:00+02:00</fechaInicio>
+        <nombre>comp1</nombre>
+    </competiciones>
+    <competiciones>
+        <descripcion>dede</descripcion>
+        <fechaInicio>2000-01-10T00:00:00+01:00</fechaInicio>
+        <nombre>comp4</nombre>
+    </competiciones>
+</ProyectoGestionCompeticionesGimnasia>

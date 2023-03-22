@@ -42,9 +42,7 @@ public class CompeticionCrud{
 		RepoCompeticiones rc = RepoCompeticiones.newInstance();
 		List<Competicion> comp = rc.getCompeticiones();
 		showAll();
-		if(comp.isEmpty()) {
-			Utils.print("No ha competiciones para editar.");
-		}else {
+		
 			for(Competicion co : comp) {
 				if(co.equals(c)) {
 					rc.setCompeticiones(comp);
@@ -52,7 +50,7 @@ public class CompeticionCrud{
 					valid = true;
 				}
 			}
-		}
+		
 		return valid;
 
 		
