@@ -5,70 +5,77 @@ import proyectoGimnasia.interfaces.iGUIPrueba;
 public class PruebaView implements iGUIPrueba{
 	
 	public void showEventMenu() {
-		print(" ---------- Menú Editar Competición ---------- ");
-		print("|                                             |");
-		print("|                                             |");
-		print("|  {1} Nombre de la competición               |");
-		print("|  {2} Añadir prueba                          |");
-		print("|  {3} Editar prueba                          |");
-		print("|  {4} Mostrar todas las pruebas              |");
-		print("|  {5} Mostrar prueba individual              |");
-		print("|  {6} Eliminar prueba                        |");
-		print("|  {7} Participantes                          |");
-		print("|  {8} Salir                                  |");
-		print("|                                             |");
-		print(" --------------------------------------------- ");
+		print("+----------------------------------------+");
+		print("|         MENU EDITAR COMPETICION        |");
+		print("+----------------------------------------+");
+		print("|                                        |");
+		print("|  {1} Nombre de la competición          |");
+		print("|  {2} Añadir prueba                     |");
+		print("|  {3} Editar prueba                     |");
+		print("|  {4} Mostrar todas las pruebas         |");
+		print("|  {5} Mostrar prueba individual         |");
+		print("|  {6} Eliminar prueba                   |");
+		print("|  {7} Participantes                     |");
+		print("|  {8} Volver                            |");
+		print("|                                        |");
+		print("+----------------------------------------+");
 		
 	}
 	
 	
 	public void TipoPrueba() {
-		print(" ----------   Agregar Prueba        ---------- ");
-		print("|                  Tipo                       |");
-		print("|                    |                        |");
-		print(" --------------------------------------------- ");
-		print("|                    |                        |");
-		print("|      Invividual    |            Grupo       |");
-		print("|                    |                        |");
-		print(" --------------------------------------------- ");
+		print("+----------------------------------------+");
+		print("|             AGREGAR PRUEBA             |");
+		print("+----------------------------------------+");
+		print("|                  TIPO                  |");
+		print("|                    |                   |");
+		print("+----------------------------------------+");
+		print("|                    |                   |");
+		print("|     INDIVIDUAL     |       GRUPO       |");
+		print("|                    |                   |");
+		print("+----------------------------------------+");
 	}
 	
 	public void CategoriaPrueba() {
-		print(" ----------    Agregar Prueba       ---------- ");
-		print("|                Categoria                    |");
-		print("|                    |                        |");
-		print(" --------------------------------------------- ");
-		print("|                    |                        |");
-		print("|      Prebenjamin   |         Benjamin       |");
-		print("|                    |                        |");
-		print(" --------------------------------------------- ");
-		print("|                    |                        |");
-		print("|      Alevin        |         Infantil       |");
-		print("|                    |                        |");
-		print(" --------------------------------------------- ");
-		print("|                    |                        |");
-		print("|      Junior        |         Senior         |");
-		print("|                    |                        |");
-		print(" --------------------------------------------- ");
+		print("+----------------------------------------+");
+		print("|             AGREGAR PRUEBA             |");
+		print("+----------------------------------------+");
+		print("|                CATEGORIA               |");
+		print("|                    |                   |");
+		print("+----------------------------------------+");
+		print("|                    |                   |");
+		print("|     PREBENJAMIN    |     BENJAMIN      |");
+		print("|                    |                   |");
+		print("+----------------------------------------+");
+		print("|                    |                   |");
+		print("|       ALEVIN       |      INFANTIL     |");
+		print("|                    |                   |");
+		print("+----------------------------------------+");
+		print("|                    |                   |");
+		print("|       JUNIOR       |       SENIOR      |");
+		print("|                    |                   |");
+		print("+----------------------------------------+");
 	}
 	
 	public void AparatoPrueba() {
-		print(" ----------   Agregar Prueba        ---------- ");
-		print("|                Categoria                    |");
-		print("|                    |                        |");
-		print(" --------------------------------------------- ");
-		print("|                    |                        |");
-		print("|      Mazas         |         Aro            |");
-		print("|                    |                        |");
-		print(" --------------------|----------------------- ");
-		print("|                    |                        |");
-		print("|      Cinta         |         Cuerda         |");
-		print("|                    |                        |");
-		print(" --------------------------------------------- ");
-		print("|                                             |");
-		print("|              ManosLibres                    |");
-		print("|                                             |");
-		print(" --------------------------------------------- ");
+		print("+----------------------------------------+");
+		print("|             AGREGAR PRUEBA             |");
+		print("+----------------------------------------+");
+		print("|                CATEGORIAS              |");
+		print("|                    |                   |");
+		print("+----------------------------------------+");
+		print("|                    |                   |");
+		print("|        MAZAS       |        ARO        |");
+		print("|                    |                   |");
+		print("+----------------------------------------+");
+		print("|                    |                   |");
+		print("|        CINTA       |       CUERDA      |");
+		print("|                    |                   |");
+		print("+----------------------------------------+");
+		print("|                                        |");
+		print("|              MANOS LIBRES              |");
+		print("|                                        |");
+		print("+----------------------------------------+");
 	}
 	public static void print (String text) {
 		System.out.println(text);

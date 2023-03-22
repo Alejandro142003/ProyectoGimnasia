@@ -9,13 +9,14 @@ public class GimnastaView implements iGUIGimnasta{
 		print("|            MENU PARTICIPANTES          |");
 		print("+----------------------------------------+");
 		print("|                                        |");
-		print("|                                        |");
 		print("|  {1} Añadir gimnasta                   |");
 		print("|  {2} Editar gimnasta                   |");
 		print("|  {3} Mostrar gimnasta                  |");
 		print("|  {4} Mostrar todos los gimnastas       |");
 		print("|  {5} Eliminar gimansta                 |");
-		print("|  {6} Salir                             |");
+		print("|  {6} Menu grupos                       |");
+		print("|  {7} Mostrar todos los participantes   |");
+		print("|  {8} Salir                             |");
 		print("|                                        |");
 		print("+----------------------------------------+");
 		

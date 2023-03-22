@@ -9,5 +9,23 @@
         <descripcion>dede</descripcion>
         <fechaInicio>2000-01-10T00:00:00+01:00</fechaInicio>
         <nombre>comp4</nombre>
+        <descripcion>ergrgeg</descripcion>
+        <fechaInicio>2019-02-02T00:00:00+01:00</fechaInicio>
+        <nombre>cp</nombre>
+        <pruebas>
+            <aparato>cuerda</aparato>
+            <categoria>senior</categoria>
+            <tipo>grupo</tipo>
+        </pruebas>
+    </competiciones>
+    <competiciones>
+        <descripcion>ergerger</descripcion>
+        <fechaInicio>2022-03-02T00:00:00+01:00</fechaInicio>
+        <nombre>geger3</nombre>
+        <pruebas>
+            <aparato>aro</aparato>
+            <categoria>infantil</categoria>
+            <tipo>individual</tipo>
+        </pruebas>
     </competiciones>
 </ProyectoGestionCompeticionesGimnasia>
