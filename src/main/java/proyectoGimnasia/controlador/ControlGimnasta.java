@@ -88,7 +88,7 @@ public class ControlGimnasta implements iControllerGimnasta {
 		controllerShowAllGymnast();
 		Utils.print("");
 		Gimnasta g = null;
-		g = (Gimnasta) gc.findGymnast(Utils.leeString("Introduce el nombre de la competicion: "));
+		g = (Gimnasta) gc.findGymnast(Utils.leeString("Introduce el nombre del gimnasta: "));
 		String nombre = Utils.leeString("Introduce el nuevo nombre: ");
 		g.setNombre(nombre);
 		String correo = Utils.leeString("Introduce el nuevo correo: ");
