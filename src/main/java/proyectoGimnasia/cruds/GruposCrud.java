@@ -3,26 +3,26 @@ package proyectoGimnasia.cruds;
 import java.util.Iterator;
 import java.util.List;
 
-import proyectoGimnasia.model.RepoGrupo;
+import proyectoGimnasia.model.RepoGimnasta;
 import proyectoGimnasia.model.DTO.Grupo;
 import proyectoGimnasia.utils.Utils;
 
 public class GruposCrud {
 
 	public boolean addGroup(Grupo g) {
-		RepoGrupo rg = RepoGrupo.newInstance();
+		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Grupo> gru = rg.getGrupos();
 		boolean result=gru.add(g);
 		if (result) {
 			rg.setGrupos(gru);
-			rg.guardarXML(gru);
+			rg.guardarXMLGrupo(gru);
 		}
 		return result;
 	}
 
 	public boolean editGroup(Grupo g) {
 		boolean result = true;
-		RepoGrupo rg = RepoGrupo.newInstance();
+		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Grupo> gru = rg.getGrupos();
 		showAllGroups();
 		if (gru.isEmpty()) {
@@ -31,7 +31,7 @@ public class GruposCrud {
 			for (Grupo grupo : gru) {
 				if (grupo.equals(g)) {
 					rg.setGrupos(gru);
-					rg.guardarXML(gru);
+					rg.guardarXMLGrupo(gru);
 					result = true;
 				}
 			}
@@ -40,18 +40,18 @@ public class GruposCrud {
 	}
 
 	public boolean deleteGroup(Grupo g) {
-		RepoGrupo rg = RepoGrupo.newInstance();
+		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Grupo> gru = rg.getGrupos();
 		boolean result = gru.remove(g);
 		if (result) {
 			rg.setGrupos(gru);
-			rg.guardarXML(gru);
+			rg.guardarXMLGrupo(gru);
 		}
 		return result;
 	}
 
 	public Grupo findGroup(String groupName) {
-		RepoGrupo rg = RepoGrupo.newInstance();
+		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Grupo> gru = rg.getGrupos();
 		Grupo grupo = null;
 		for(Grupo g : gru) {
@@ -64,7 +64,7 @@ public class GruposCrud {
 	}
 	
 	public Grupo showGroups(String groupName) {
-		RepoGrupo rg = RepoGrupo.newInstance();
+		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Grupo> gru = rg.getGrupos();
 		Iterator<Grupo> it = gru.iterator();
 		Grupo g = it.next();
@@ -80,7 +80,7 @@ public class GruposCrud {
 	
 	
 	public String showAllGroups() {
-		RepoGrupo rg = RepoGrupo.newInstance();
+		RepoGimnasta rg = RepoGimnasta.newInstance();
 		List<Grupo> gru = rg.getGrupos();
 		String result ="";
 		for (Grupo grupo:gru) {

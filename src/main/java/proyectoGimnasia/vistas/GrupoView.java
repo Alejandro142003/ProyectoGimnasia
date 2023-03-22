@@ -11,8 +11,10 @@ public class GrupoView implements iGUIGrupo{
 		print("|                                        |");
 		print("|  {1} Añadir grupo                      |");
 		print("|  {2} Editar grupo                      |");
-		print("|  {3} Eliminar grupo                    |");
-		print("|  {4} Volver                            |");
+		print("|  {3} Mostrar grupo                     |");
+		print("|  {4} Mostrar todos los grupos          |");
+		print("|  {5} Eliminar grupo                    |");
+		print("|  {6} Volver                            |");
 		print("|                                        |");
 		print("+----------------------------------------+");
 		
@@ -24,8 +26,8 @@ public class GrupoView implements iGUIGrupo{
 		print("|      MENU EDITAR GIMNASTAS GRUPO       |");
 		print("+----------------------------------------+");
 		print("|                                        |");
-		print("|  {1} Añadir gimnasta grupo             |");
-		print("|  {2} Eliminar gimnasta grupo           |");
+		print("|  {1} Añadir gimnasta al grupo          |");
+		print("|  {2} Eliminar gimnasta del grupo       |");
 		print("|  {3} Volver                            |");
 		print("|                                        |");
 		print("+----------------------------------------+");

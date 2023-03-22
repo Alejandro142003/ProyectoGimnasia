@@ -14,7 +14,9 @@ public class GimnastaView implements iGUIGimnasta{
 		print("|  {3} Mostrar gimnasta                  |");
 		print("|  {4} Mostrar todos los gimnastas       |");
 		print("|  {5} Eliminar gimansta                 |");
-		print("|  {6} Salir                             |");
+		print("|  {6} Menu grupos                       |");
+		print("|  {7} Mostrar todos los participantes   |");
+		print("|  {8} Salir                             |");
 		print("|                                        |");
 		print("+----------------------------------------+");
 		
