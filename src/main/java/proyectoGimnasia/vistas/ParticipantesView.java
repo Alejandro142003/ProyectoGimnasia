@@ -17,7 +17,7 @@ public class ParticipantesView {
 		print("|  {1} Mostrar participantes             |");
 		print("|  {2} Menú gimnastas                    |");
 		print("|  {3} Menú grupos                       |");
-		print("|  {4} Volver                             |");
+		print("|  {4} Volver                            |");
 		print("|                                        |");
 		print("+----------------------------------------+");
 		

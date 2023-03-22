@@ -13,7 +13,7 @@ public class ParticipacionView implements iGUIParticipacion{
 		print("|  {2} Editar participante               |");
 		print("|  {3} Mostrar participantes             |");
 		print("|  {4} Eliminar participantes            |");
-		print("|  {5} Volver                             |");
+		print("|  {5} Volver                            |");
 		print("|                                        |");
 		print("+----------------------------------------+");
 		

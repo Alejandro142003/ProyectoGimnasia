@@ -15,7 +15,7 @@ public class CompeticionView implements iGUICompeticion{
 		print("|  {4} Eliminar competición              |");
 		print("|  {5} Mostrar todas competiciones       |");
 		print("|  {6} Menu Pruebas                      |");
-		print("|  {7} Volver                             |");
+		print("|  {7} Volver                            |");
 		print("|                                        |");
 		print("+----------------------------------------+");
 		
